@@ -1,0 +1,10 @@
+@import 'variable';
+
+header {
+    background-color: $background-color;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $text-color;
+}

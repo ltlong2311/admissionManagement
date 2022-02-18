@@ -1,0 +1,88 @@
+header {
+  background-color: #ffffff;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #424242;
+}
+
+footer {
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer button {
+  background-color: #22a7f0;
+  border: 0;
+  padding: 5px 10px;
+  color: wheat;
+}
+
+section .button1, section .button2 {
+  background-color: #22a7f0;
+  border: 0;
+  padding: 5px 10px;
+  color: wheat;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+body a {
+  text-decoration: none;
+}
+
+section button {
+  background-color: #22a7f0;
+  border: 0;
+  padding: 5px 10px;
+  color: wheat;
+  background: green;
+}
+
+section p {
+  font-size: 10px;
+}
+
+.footer {
+  width: 100%;
+  float: left;
+  height: 100 px;
+  background-color: #f4f4f4;
+  min-height: 125 px;
+}
+
+.footer .footer__main {
+  margin: 0 px;
+  padding: 0 px;
+  width: 980 px;
+  float: inherit;
+  text-align: center;
+  vertical-align: top;
+}
+
+.footer .footer__main .license {
+  width: 440 px;
+  height: 100%;
+  margin: 10 px;
+  color: black;
+  padding-top: 16 px;
+  text-align: center;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,99 @@
+<div class="mt-4">
+    <h3>Tin tức đã xóa</h3>
+    <a href="/me/stored/news" class="d-flex flex-row-reverse">
+     <span class="material-icons" style="font-size:30px; color:rgb(74, 15, 97);">
+       list_alt
+     </span>
+     <p class="me-1 ">Danh sách tin</p>
+    </a>
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Ten tin</th>
+                <th scope="col">Description</th>
+                <th scope="col">CreatedAt</th>
+                <th scope="col">DeletedAt</th>
+                <th scope="col" colspan="3">Handle</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each newsList}}
+            <tr>
+                <th scope="row">{{sum @index 1}}</th>
+                <td>{{this.name}}</td>
+                <td>{{this.description}}</td>
+                <td>{{this.createdAt}}</td>
+                <td>{{this.deletedAt}}</td>
+                <td class="d-flex flex-row">
+                    <a href="" class="btn btn-success btn-restore me-1" data-id="{{this._id}}" id="btn-restore-news">Khôi phục</a>
+                    <a href="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-news-modal" data-id="{{this._id}}">Xóa</a>
+                </td>
+            </tr>
+            {{else}}
+            <tr>  
+              <td colspan="5" class="text-center">
+                Thùng rác trống!
+              </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+{{!-- Modal confirm delete news --}}
+
+<div class="modal fade" id="delete-news-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirm delete</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div> 
+      <div class="modal-body">
+        Có muốn xóa tin tức này?
+      </div>
+      <div class="modal-footer">
+        <button id="btn-delete-news" type="button" class="btn btn-danger">Xóa bỏ</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- hidden actions form --}}
+<form name="delete-news-form" method="post"></form>
+<form name="restore-news-form" method="post"></form>
+
+<script>
+    var btnRestoreNews = $('.btn-restore');
+    var restoreForm = document.forms['restore-news-form'];
+
+    btnRestoreNews.click((e) => {
+        e.preventDefault();  // remove default behavior of a element
+        {{!-- var newsId = $(this).data('id'); --}}
+        var newsId = $(e.target).data('id');
+        restoreForm.action = '/news/' + newsId + '/restore?_method=PATCH';
+        restoreForm.submit();
+    })
+
+    var deleteNewsModal = document.getElementById('delete-news-modal');
+
+    deleteNewsModal.addEventListener('show.bs.modal', (event) => {
+        var deleteForm = document.forms['delete-news-form'];
+        var btnDeleteNews = document.getElementById('btn-delete-news');
+
+        // Button that triggered the modal
+        var button = event.relatedTarget;
+        // Extract info from data-bs-* attributes
+        var newsId = button.getAttribute('data-id');
+        console.log(newsId);
+
+        btnDeleteNews.onclick = () => {
+            deleteForm.action = '/news/' + newsId + '/force?_method=DELETE';
+            deleteForm.submit();
+        }
+    })
+
+        
+</script>

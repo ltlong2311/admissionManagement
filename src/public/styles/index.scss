@@ -1,0 +1,59 @@
+@import 'variable';
+@import 'header';
+@import 'footer';
+@import 'mixins';
+@import 'extends';
+
+
+body {
+    background-color: $background-color;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+section {
+    button {
+        @include buttonStyle();
+        background: green;
+    }
+
+    .button1 {
+        @extend %buttonStyle;
+    }
+
+    .button2 {
+        @extend %buttonStyle;
+    }
+
+    p {
+        font-size: 10px;
+    }
+}
+
+.footer {
+    width: 100%;
+    float: left;
+    height: 100 px;
+    background-color: $whiteT;
+    min-height: 125 px;
+
+    .footer__main {
+        margin: 0 px;
+        padding: 0 px;
+        width: 980 px;
+        float: inherit;
+        text-align: center;
+        vertical-align: top;
+
+        .license {
+            width: 440 px;
+            height: 100%;
+            margin: 10 px;
+            color: black;
+            padding-top: 16 px;
+            text-align: center;
+        }
+    }
+}

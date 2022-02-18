@@ -1,0 +1,13 @@
+@import 'variable';
+@import 'mixins';
+
+footer {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    button {
+        @include buttonStyle();;
+    }
+}
