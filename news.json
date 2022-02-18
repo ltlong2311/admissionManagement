@@ -1,0 +1,101 @@
+[{
+  "_id": {
+    "$oid": "62079ea754bdcef77472572f"
+  },
+  "name": "Tuyển sinh 2022",
+  "description": "none",
+  "image": "https://i.imgur.com/MZioN93.jpg",
+  "slug": "tuyen-sinh",
+  "updatedAt": {
+    "$date": "2022-02-18T10:50:22.907Z"
+  },
+  "deleted": false
+},{
+  "_id": {
+    "$oid": "6208814fe28b76cbb324f0fb"
+  },
+  "name": "Tuyển sinh dai hoc 2022",
+  "description": "Use our free, collaborative, in-browser IDE ",
+  "image": "https://i.imgur.com/An3S07z.jpg",
+  "slug": "abc",
+  "updatedAt": {
+    "$date": "2022-02-18T10:51:13.352Z"
+  },
+  "deleted": false,
+  "deletedAt": {
+    "$date": "2022-02-18T08:04:13.124Z"
+  }
+},{
+  "_id": {
+    "$oid": "620b771ef6f6b2171b0c26ac"
+  },
+  "name": "Ten New",
+  "description": "Tin moi",
+  "image": "https://giasuhalong.edu.vn/wp-content/uploads/2020/08/Thong-bao-tuyen-sinh.png",
+  "createdAt": {
+    "$date": "2022-02-15T09:49:18.033Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-18T10:51:14.509Z"
+  },
+  "__v": 0,
+  "deleted": false,
+  "deletedAt": {
+    "$date": "2022-02-18T10:50:34.527Z"
+  }
+},{
+  "_id": {
+    "$oid": "620b7721f6f6b2171b0c26af"
+  },
+  "name": "Ten",
+  "description": "Tin moi",
+  "image": "https://giasuhalong.edu.vn/wp-content/uploads/2020/08/Thong-bao-tuyen-sinh.png",
+  "createdAt": {
+    "$date": "2022-02-15T09:49:21.374Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-18T10:51:15.215Z"
+  },
+  "__v": 0,
+  "deleted": false,
+  "deletedAt": {
+    "$date": "2022-02-18T08:04:18.991Z"
+  }
+},{
+  "_id": {
+    "$oid": "620b776d112f75e4c65ada46"
+  },
+  "name": "Ten tin tuc",
+  "description": "Tin moi   msnfs",
+  "image": "https://giasuhalong.edu.vn/wp-content/uploads/2020/08/Thong-bao-tuyen-sinh.png",
+  "createdAt": {
+    "$date": "2022-02-15T09:50:37.766Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-18T08:04:20.426Z"
+  },
+  "__v": 0,
+  "deleted": true,
+  "deletedAt": {
+    "$date": "2022-02-18T08:04:20.425Z"
+  }
+},{
+  "_id": {
+    "$oid": "620b7b2a66d453571e9ffcb7"
+  },
+  "name": "Tin tuc moi",
+  "description": "Noi dung",
+  "image": "https://giasuhalong.edu.vn/wp-content/uploads/2020/08/Thong-bao-tuyen-sinh.png",
+  "createdAt": {
+    "$date": "2022-02-15T10:06:34.107Z"
+  },
+  "updatedAt": {
+    "$date": "2022-02-18T07:59:36.597Z"
+  },
+  "slug": "tin-tuc-moi-VlAh6pZye",
+  "__v": 0,
+  "deleted": true,
+  "deletedAt": {
+    "$date": "2022-02-18T07:59:36.595Z"
+  }
+}]
