@@ -2,17 +2,20 @@
 @import '../utilities/mixins';
 
 #mainNav {
-    position: fixed;
     width: 100vw;
-    height: 65px;
+    height: 60px;
     z-index: 10;
 }
 
 .navbar {
-    margin-top: 5rem;
-    background-color: #fff;
-    color: #000;
+    position: relative;
+    // margin-top: 4rem;
+    background-color: #474580;
     align-items: center;
+
+    a {
+        color: #fff;
+    }
 
     .container {
         height: 100%;
@@ -24,9 +27,12 @@
 }
 
 .sticky {
+    position: fixed!important;
     height: 50px !important;
+    top: 0;
     background-color: #6762eb;
     margin-top: 0;
+
     a {
         color: #fff !important;
     }

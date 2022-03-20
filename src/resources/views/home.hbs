@@ -1,23 +1,27 @@
 {{!-- {{> header}} --}}
 {{!-- <p>{{newsList}}</p> --}}
 
-<div class="mt-4">
-    <div class="row">
+<div class='mt-4'>
+    <div class='row'>
         {{#each newsList}}
-         <div class="col-sm-6 col-lg-4">
-             <div class="card">
-                <a href="/news/{{this.slug}}">
-                    <img src="{{this.image}}" class="card-img-top" alt="..." />
-                </a>
-                <div class="card-body">
-                    <a href="/news/{{this.slug}}">
-                        <h5 class="card-title">{{this.name}}</h5>
+            <div class='col-sm-6 col-lg-4'>
+                <div class='card'>
+                    <a href='/news/{{this.slug}}'>
+                        <img
+                            src='{{this.image}}'
+                            class='card-img-top'
+                            alt='...'
+                        />
                     </a>
-                    <p class="card-text">{{this.description}}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <div class='card-body'>
+                        <a href='/news/{{this.slug}}'>
+                            <h5 class='card-title'>{{this.name}}</h5>
+                        </a>
+                        <p class='card-text'>{{this.description}}</p>
+                        <a href='#' class='btn btn-primary'>Go somewhere</a>
+                    </div>
                 </div>
             </div>
-         </div>
         {{/each}}
     </div>
 </div>
