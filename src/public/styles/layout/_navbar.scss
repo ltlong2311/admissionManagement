@@ -1,0 +1,33 @@
+@import '../utilities/variable';
+@import '../utilities/mixins';
+
+#mainNav {
+    position: fixed;
+    width: 100vw;
+    height: 65px;
+    z-index: 10;
+}
+
+.navbar {
+    margin-top: 5rem;
+    background-color: #fff;
+    color: #000;
+    align-items: center;
+
+    .container {
+        height: 100%;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        height: 100%;
+    }
+}
+
+.sticky {
+    height: 50px !important;
+    background-color: #6762eb;
+    margin-top: 0;
+    a {
+        color: #fff !important;
+    }
+}

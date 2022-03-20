@@ -1,0 +1,39 @@
+@import '../utilities/variable';
+
+
+footer {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    button {
+        @include buttonStyle();;
+    }
+}
+
+.footer {
+    width: 100%;
+    float: left;
+    height: 100 px;
+    background-color: $whiteT;
+    min-height: 125 px;
+
+    .footer__main {
+        margin: 0 px;
+        padding: 0 px;
+        width: 980 px;
+        float: inherit;
+        text-align: center;
+        vertical-align: top;
+
+        .license {
+            width: 440 px;
+            height: 100%;
+            margin: 10 px;
+            color: black;
+            padding-top: 16 px;
+            text-align: center;
+        }
+    }
+}

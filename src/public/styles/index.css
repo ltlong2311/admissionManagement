@@ -1,6 +1,14 @@
+section .button1, section .button2 {
+  background-color: #22a7f0;
+  border: 0;
+  padding: 5px 10px;
+  color: wheat;
+}
+
 header {
   background-color: #ffffff;
-  height: 300px;
+  height: 50vh;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,6 +19,15 @@ header {
       -ms-flex-align: center;
           align-items: center;
   color: #424242;
+}
+
+header .header-image {
+  margin-top: 65px;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-size: contain;
 }
 
 footer {
@@ -33,11 +50,64 @@ footer button {
   color: wheat;
 }
 
-section .button1, section .button2 {
-  background-color: #22a7f0;
-  border: 0;
-  padding: 5px 10px;
-  color: wheat;
+.footer {
+  width: 100%;
+  float: left;
+  height: 100 px;
+  background-color: "#f1f1f1";
+  min-height: 125 px;
+}
+
+.footer .footer__main {
+  margin: 0 px;
+  padding: 0 px;
+  width: 980 px;
+  float: inherit;
+  text-align: center;
+  vertical-align: top;
+}
+
+.footer .footer__main .license {
+  width: 440 px;
+  height: 100%;
+  margin: 10 px;
+  color: black;
+  padding-top: 16 px;
+  text-align: center;
+}
+
+#mainNav {
+  position: fixed;
+  width: 100vw;
+  height: 65px;
+  z-index: 10;
+}
+
+.navbar {
+  margin-top: 5rem;
+  background-color: #fff;
+  color: #000;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar .container {
+  height: 100%;
+}
+
+.navbar .navbar-expand-lg .navbar-collapse {
+  height: 100%;
+}
+
+.sticky {
+  height: 50px !important;
+  background-color: #6762eb;
+  margin-top: 0;
+}
+
+.sticky a {
+  color: #fff !important;
 }
 
 body {
@@ -60,29 +130,8 @@ section p {
   font-size: 10px;
 }
 
-.footer {
+img {
   width: 100%;
-  float: left;
-  height: 100 px;
-  background-color: #f4f4f4;
-  min-height: 125 px;
-}
-
-.footer .footer__main {
-  margin: 0 px;
-  padding: 0 px;
-  width: 980 px;
-  float: inherit;
-  text-align: center;
-  vertical-align: top;
-}
-
-.footer .footer__main .license {
-  width: 440 px;
   height: 100%;
-  margin: 10 px;
-  color: black;
-  padding-top: 16 px;
-  text-align: center;
 }
 /*# sourceMappingURL=index.css.map */

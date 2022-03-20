@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #e3f2fd;" id="mainNav">
-    <div class="container px-4 px-lg-5">
+<nav class="navbar navbar-expand-lg" id="mainNav">
+    <div class="container">
         <a class="navbar-brand" href="/home">KMA</a>
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -7,8 +7,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/home">Home</a></li>
-                <li class="nav-item dropdown">
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" data-bs-toggle="dropdown" aria-expanded="false" href="/home">Trang chủ</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/me/stored/news">Danh sách tin</a></li>
+                        <li><a class="dropdown-item" href="news/create">Đăng tin</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/me/trash/news">Tin đã xóa</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" data-bs-toggle="dropdown" aria-expanded="false" href="/home">Tuyển sinh</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" data-bs-toggle="dropdown" aria-expanded="false" href="/news">Tin tức</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" data-bs-toggle="dropdown" aria-expanded="false" href="/contact">Liên hệ</a></li>  
+                {{!-- <li class="nav-item dropdown">
                     <a class="nav-link px-lg-3 py-3 py-lg-4 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         LTL
                     </a>
@@ -18,8 +28,11 @@
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="/me/trash/news">Tin đã xóa</a></li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </div>
 </nav>
+
+
+
