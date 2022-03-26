@@ -1,0 +1,21 @@
+@import '../utilities/variable', '../utilities/mixins';
+
+.bg-dark {
+    @include bgColor($dark);
+}
+
+.bg-white {
+    @include bgColor($white);
+}
+
+.bg-section {
+    @include bgColor($whiteT);
+}
+
+.bg-transparent {
+    @include bgColor($transparent);
+}
+
+.bg-lightC {
+    @include bgColor($lightC);
+}

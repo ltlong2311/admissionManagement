@@ -27,10 +27,11 @@
 }
 
 .sticky {
-    position: fixed!important;
+    position: fixed !important;
     height: 50px !important;
     top: 0;
-    background-color: #6762eb;
+    // background-color: #6762eb;
+    background: linear-gradient(to left, #cd252b, #323c74, #47539b);
     margin-top: 0;
 
     a {

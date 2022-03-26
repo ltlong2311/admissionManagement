@@ -16,6 +16,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
             .logo-icon {
                 width: 3.6rem;
                 height: 3.6rem;
@@ -39,6 +40,9 @@
 
 
         .search {
+            flex: 0 0 auto;
+            width: 10rem;
+
             .search-item {
                 display: flex;
                 position: relative;
@@ -47,7 +51,7 @@
                 .form-search {
                     display: block;
                     width: 100%;
-                    height: 34px;
+                    height: 2.3rem;
                     padding: 6px 12px;
                     font-size: 14px;
                     line-height: 1.4;
@@ -69,6 +73,13 @@
                 }
             }
         }
+
+        .admission-btn {
+            flex: 0 0 auto;
+            width: fit-content;
+            height: 2.3rem;
+        }
     }
+
 
 }

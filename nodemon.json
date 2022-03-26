@@ -1,3 +1,4 @@
 {
-    "ext": "js json scss"
+    "watch": ["server.js", "src/"],
+    "ext": "js json scss hbs handlebar"
 }
