@@ -16,6 +16,10 @@
     @include bgColor($transparent);
 }
 
-.bg-lightC {
-    @include bgColor($lightC);
+.bg-lightEB {
+    @include bgColor($eastBay);
+}
+
+.bg-lightBlue {
+    @include bgColor($lightBlue);
 }

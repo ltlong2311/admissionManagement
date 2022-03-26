@@ -1,58 +1,66 @@
 {{!-- {{> header}} --}}
 {{!-- <p>{{newsList}}</p> --}}
 
-<div class="home-page">
-    <section class="container header-content">
-        <div class="row">
-            <div class="col-3">
-                <div class="home-list bg-lightC">
-                    <div class="stylized__item">
-                        <div class="stylized">
-                           <i class="far fa-newspaper icon--grad"></i>
-                           <h3> Đào tạo </h3>
-                           <p class="desc">Top 8 trường đào tạo an toàn thông tin trọng điểm cả nước</p>
+<div class='home-page'>
+    <section class='container header-content'>
+        <div class='row'>
+            <div class='col-3'>
+                <div class='home-list bg-lightEB'>
+                    <div class='stylized__item'>
+                        <div class='stylized'>
+                            <i class='fa-solid fa-book-open-reader icon--grad'></i>
+                            <h3> Đào tạo </h3>
+                            <p class='desc'>Top 8 trường đào tạo an toàn thông
+                                tin trọng điểm cả nước</p>
                         </div>
                     </div>
-                    <div class="stylized__item">
-                      <div class="stylized">
-                           <i class="fas fa-plane-departure icon--grad"></i>
-                           <h3> Học bổng </h3>
-                           <p class="desc">Học bổng và cơ hội du học ngay từ năm nhất</p>
+                    <div class='stylized__item'>
+                        <div class='stylized'>
+                            <i class='fa-solid fa-plane-departure icon--grad'></i>
+                            <h3> Học bổng </h3>
+                            <p class='desc'>Học bổng và cơ hội du học ngay từ
+                                năm nhất</p>
                         </div>
                     </div>
-                    <div class="stylized__item">
-                      <div class="stylized">
-                           <i class="fa-solid fa-briefcase icon--grad"></i>
-                           <h3> Cơ hội </h3>
-                           <p class="desc">Cơ hội việc làm cao</p>
+                    <div class='stylized__item'>
+                        <div class='stylized'>
+                            <i class='fa-solid fa-briefcase icon--grad'></i>
+                            <h3> Cơ hội </h3>
+                            <p class='desc'>Cơ hội việc làm cao</p>
                         </div>
                     </div>
-                    <div class="stylized__item">
-                      <div class="stylized">
-                           <i class="fas fa-hand-holding-usd icon--grad"></i>
-                           <h3> Học phí </h3>
-                           <p class="desc">Học phí hợp lý</p>
+                    <div class='stylized__item'>
+                        <div class='stylized'>
+                            <i class='fa-solid fa-hand-holding-usd icon--grad'></i>
+                            <h3> Học phí </h3>
+                            <p class='desc'>Học phí hợp lý</p>
                         </div>
                     </div>
-                </div>    
+                </div>
             </div>
-            <div class="col-9">
-                <div class="slider">
-                    <img src="http://ts.actvn.edu.vn/Upload/svda/treo-tuong-web-1.jpg" alt="" />
+            <div class='col-9'>
+                <div class='slider'>
+                    <img
+                        src='http://ts.actvn.edu.vn/Upload/svda/treo-tuong-web-1.jpg'
+                        alt=''
+                    />
                 </div>
             </div>
         </div>
     </section>
-    <section class="container news-section mt-4">
-    <div class="row">
-        <div class="col-3">
-            <div class="category bg-lightC">
-               <p>.</p>
-            </div>    
-        </div>
-        <div class="col-9">
-            <div class='row'>
-                {{#each newsList}}
+    <section class='container news-section mt-4'>
+        <div class='row'>
+            <div class='col-3'>
+                <div class='category bg-lightBlue'>
+                    <p>.</p>
+                </div>
+            </div>
+            <div class='col-9'>
+                <div class="title"> 
+                    <h2>Tin tuyển sinh</h2>
+                </div>
+                <div class='row'>
+                    {{#each newsList}}
                     <div class='col-sm-6 col-lg-4'>
                         <div class='card'>
                             <a href='/news/{{this.slug}}'>
@@ -71,11 +79,11 @@
                             </div>
                         </div>
                     </div>
-                {{/each}}
+                    {{/each}}
+                </div>
             </div>
-         </div>
 
-    </div>
+        </div>
     </section>
     {{> banner}}
 </div>
