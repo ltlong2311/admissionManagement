@@ -14,7 +14,9 @@ class SiteController {
             .then((newsList) => {
                 // news = news.map((item) => item.toObject());
                 // res.render('home', { news });
-                res.render('home', { newsList: multipleMongooseToOject(newsList) });
+                res.render('home', {
+                    newsList: multipleMongooseToOject(newsList), 
+                });
             })
             .catch(next);
     }

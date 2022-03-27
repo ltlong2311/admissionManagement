@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nguyễn Minh Đăng</title>
+    </head>
+    <style>
+      .nav>li{
+        float: left;
+        padding: 0px 20px;
+      }
+       
+      .nav>li>a{
+        text-transform: uppercase;
+      }
+       
+      .nav li{
+        position: relative;
+        list-style:none;
+        background-color: teal;
+      }
+      
+             
+      .nav li a{
+        padding: 10px;
+        line-height: 20px;
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+      }
+       
+      .nav .sub-menu{
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 130px;
+        width: 150px;
+        padding: 0px 20px;
+      }
+       
+      .nav li:hover>.sub-menu{
+        display: block;
+      }
+       
+      .nav>li>.sub-menu{
+        top: 40px;
+        left: 0;
+      }
+      .slide{
+        width: 1300px;
+        margin: 0px 200px; 
+      }
+      .nav{
+        margin: 0px 160px 0px;
+      }
+      .body{
+        width: 1300px;
+        margin: 0px 200px;
+      }
+      .body .left{
+        clear: left;
+        background: #000;
+        width: 20%;
+        height: 500px;
+        float:left;
+      }
+      .body .center{
+        background: #ccc;
+        width: 50%; 
+        /* height: auto; */
+        height: 500px;
+        float: left;
+
+      }
+      .body .right{
+        background: orange;
+        width: 30%;
+        /* height: auto; */
+        height: 500px;
+        float: left;
+      }
+      footer{
+        margin: 0px 200px;
+        height: 100px;
+        clear: left;
+        background: cyan;
+        width: 1300px;
+      }
+    </style>
+    <body>
+      <div class="slide"><img src="slide-cho-website-mien-phi.png" width="100%" height="100%" alt="" title="" /></div>
+      <nav>
+        <ul class="nav">
+         <li><a href="#">TRANG CHỦ</a></li>
+         <li>
+           <a href="#">THÔNG TIN</a>
+           <ul class="sub-menu">
+              <li><a href="#">Giới thiệu</a></li>
+              <li>
+                 <a href="#">Hướng Dẫn</a>
+                 <ul class="sub-menu">
+                     <li><a href="#">Đăng nhập-đăng ký</a></li>
+                     <li><a href="#">Xác thực tài khoản</a></li>
+                     <li><a href="#">Các chức năng phụ</a></li>
+                 </ul>
+              </li>
+              <li>
+                <a href="#">Nội dung</a>
+                <ul class="sub-menu">
+                     <li><a href="#">Bài viết</a></li>
+                     <li><a href="#">Bài Đăng</a></li>
+                     <li><a href="#">Tin tức</a></li>
+                 </ul>
+              </li>
+              <li><a href="#">Địa chỉ</a></li>
+           </ul>
+         </li>
+         <li>
+          <a href="#">Danh mục</a>
+          <ul class="sub-menu">
+              <li><a href="#">Nguồn gốc</a></li>
+              <li>
+                 <a href="#">Sản phẩm</a>
+                 <ul class="sub-menu">
+                     <li><a href="#">Thiết bị</a></li>
+                     <li><a href="#">Phụ kiện</a></li>
+                     <li><a href="#">Đồ dùng</a></li>
+                 </ul>
+              </li>
+              <li>
+                <a href="#">Tin mới</a>
+                <ul class="sub-menu">
+                     <li><a href="#">Tin trong ngày</a></li>
+                     <li><a href="#">Tin nổi bật</a></li>
+                    
+                 </ul>
+              </li>
+              <li><a href="#">Liên Hệ</a></li>
+              <li><a href="#">Hỗ trợ</a></li>
+           </ul>
+         </li>
+         <li>
+          <a href="#">Liên Hệ</a>
+          <ul class="sub-menu">
+              <li><a href="#">Giới thiệu</a></li>
+              <li>
+                 <a href="#">Hướng Dẫn</a>
+                 <ul class="sub-menu">
+                     <li><a href="#">Đăng nhập-đăng ký</a></li>
+                     <li><a href="#">Xác thực tài khoản</a></li>
+                     <li><a href="#">Các chức năng phụ</a></li>
+                 </ul>
+              </li>
+              <li>
+                <a href="#">Nội dung</a>
+                <ul class="sub-menu">
+                     <li><a href="#">Bài viết</a></li>
+                     <li><a href="#">Bài Đăng</a></li>
+                     <li><a href="#">Tin tức</a></li>
+                 </ul>
+              </li>
+              <li><a href="#">Địa chỉ</a></li>
+           </ul>
+        </li>
+         <li>
+          <a href="#">Diễn đàn</a>
+          <ul class="sub-menu">
+              <li>
+                <a href="#">Nguồn gốc</a>
+                <ul class="sub-menu">
+                     <li><a href="#">Không rõ nguồn gốc</a></li>
+                 </ul>
+              </li>
+              <li>
+                 <a href="#">Sản phẩm</a>
+                 <ul class="sub-menu">
+                     <li><a href="#">Thiết bị</a></li>
+                     <li><a href="#">Phụ kiện</a></li>
+                     <li><a href="#">Đồ dùng</a></li>
+                 </ul>
+              </li>
+              <li>
+                <a href="#">Tin mới</a>
+                <ul class="sub-menu">
+                     <li><a href="#">Tin trong ngày</a></li>
+                     <li><a href="#">Tin nổi bật</a></li>
+                 </ul>
+              </li>
+              <li><a href="#">Liên Hệ</a></li>
+              <li><a href="#">Hỗ trợ</a></li>
+           </ul>
+        </li>
+         <li><a href="#">Hỗ trợ</a></li>
+         <li><a href="#">Các chức năng khác</a></li>
+         <li><a href="#">Sản xuất</a></li>
+         <li><a href="#">.........</a></li>
+        </ul>
+      </nav>
+      <div class="body">
+        <div class="left">...</div>
+        <div class="center">Nội dung</div>
+        <div class="right"> Nội dung thêm</div>
+      </div>
+      <footer>footer</footer>
+    </body>
+</html>

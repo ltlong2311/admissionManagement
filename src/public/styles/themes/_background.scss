@@ -1,25 +1,29 @@
 @import '../utilities/variable', '../utilities/mixins';
 
-.bg-dark {
+.bg--dark {
     @include bgColor($dark);
 }
 
-.bg-white {
+.bg--white {
     @include bgColor($white);
 }
 
-.bg-section {
+.bg--section {
     @include bgColor($whiteT);
 }
 
-.bg-transparent {
+.bg--transparent {
     @include bgColor($transparent);
 }
 
-.bg-lightEB {
+.bg--lightEB {
     @include bgColor($eastBay);
 }
 
-.bg-lightBlue {
+.bg--lightBlue {
     @include bgColor($lightBlue);
+}
+
+.bg--heading {
+    @include bgColor($red);
 }

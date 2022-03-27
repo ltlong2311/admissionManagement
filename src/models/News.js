@@ -8,6 +8,7 @@ const News = new Schema({
   description: { type: String },
   image: { type: String },
   slug: { type: String, slug: 'name', unique: true },
+  isRecommended: { type: Boolean }
 }, {
   timestamps: true,
 });
