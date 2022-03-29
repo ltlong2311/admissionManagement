@@ -56,7 +56,7 @@
             </div>
         </div>
     </section>
-    <section class='news-section'>
+    <section class='recommended-news'>
         <div class='container mt-4'>
             <div class='row'>
                 <div class='category col-3'>
@@ -149,64 +149,115 @@
             </div>
         </div>
     </section>
-    <section class=''>
+    <section class='college-admissions bg--section'>
         <div class='container mt-4'>
-            <div class='admission-news__heading'>
-                <h3 class='title'>Thông báo tuyển sinh</h3>
+            <div class='college-admissions__heading heading--center'>
+                <h2 class='highlight-underline'>Tuyển sinh đại học</h2>
+            </div>
+            <div class='row college-admissions__content'>
+                {{#each newsList}}
+                    <div class='col-sm-6 col-lg-3'>
+                        <div class='card'>
+                            <a href='/news/{{this.slug}}'>
+                                <img
+                                    src='{{this.image}}'
+                                    class='card-img-top'
+                                    alt='...'
+                                />
+                            </a>
+                            <div class='card-body'>
+                                <a href='/news/{{this.slug}}'>
+                                    <h5
+                                        class='card-title'
+                                    >{{this.name}}</h5>
+                                </a>
+                                <p
+                                    class='card-text'
+                                >{{this.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
             </div>
         </div>
     </section>
-    <section class=''>
+    <section class='specialized-training'>
         <div class='container mt-4'>
-            <div class='admission-news__heading'>
-                <h3 class='title'>Phương thức tuyển sinh</h3>
+            <div class='specialized-training__heading heading--center'>
+                <h2 class='highlight-underline'>Chuyên ngành đào tạo</h2>
+            </div>
+                 <h3 class='Sub-title'>Cơ sở phía bắc</h3>
+            <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                <div class="card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Info card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
             </div>
         </div>
     </section>
-    <section class=''>
+    <section class='infrastructure bg--section'>
         <div class='container mt-4'>
-            <div class='admission-news__heading'>
-                <h3 class='title'>Chuyên ngành đào tạo</h3>
+            <div class='infrastructure__heading heading--center'>
+                <h2 class='highlight-underline'>Cơ sở vật chất</h2>
+            </div>
+            <div class='row infrastructure__content'>
+                {{#each newsList}}
+                    <div class='col-sm-6 col-lg-3'>
+                        <div class='card'>
+                            <div class="card bg-dark text-white">
+                                <div class="card-img-overlay">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text">Last updated 3 mins ago</p>
+                                </div>
+                                <img class="card-img" src='{{this.image}}' alt="Card image">
+                             </div>
+                    
+                        </div>
+                    </div>
+
+                {{/each}}
             </div>
         </div>
     </section>
     {{> banner-kma}}
-    <section class='container news-event mt-4'>
+    <section class='container news-events mt-4'>
         <div class='row'>
-            <div class='admission-news col-9'>
-                <div class='admission-news__heading'>
-                    <h3 class='title'>Tin tức - sự kiện</h3>
+            <div class='news-events-list col-9'>
+                <div class='news-events__heading'>
+                    <h2 class='title'>Tin tức - sự kiện</h2>
                 </div>
-                <div class='row admission-news__content'>
+                <div class='row news-events__content'>
                      {{#each newsList}}
-                            <div class='col-sm-6 col-lg-4'>
-                                <div class='card'>
+                        <div class='col-sm-6 col-lg-4'>
+                            <div class='card'>
+                                <a href='/news/{{this.slug}}'>
+                                    <img
+                                        src='{{this.image}}'
+                                        class='card-img-top'
+                                        alt='...'
+                                    />
+                                </a>
+                                <div class='card-body'>
                                     <a href='/news/{{this.slug}}'>
-                                        <img
-                                            src='{{this.image}}'
-                                            class='card-img-top'
-                                            alt='...'
-                                        />
+                                        <h5
+                                            class='card-title'
+                                        >{{this.name}}</h5>
                                     </a>
-                                    <div class='card-body'>
-                                        <a href='/news/{{this.slug}}'>
-                                            <h5
-                                                class='card-title'
-                                            >{{this.name}}</h5>
-                                        </a>
-                                        <p
-                                            class='card-text'
-                                        >{{this.description}}</p>
-                                        <a
-                                            href='#'
-                                            alt=''
-                                            title=''
-                                            class='btn btn-primary'
-                                        >Go somewhere</a>
-                                    </div>
+                                    <p
+                                        class='card-text'
+                                    >{{this.description}}</p>
+                                    <a
+                                        href='#'
+                                        alt=''
+                                        title=''
+                                        class='btn btn-primary'
+                                    >Go somewhere</a>
                                 </div>
                             </div>
-                        {{/each}}
+                        </div>
+                    {{/each}}
                 </div>
             </div>
             <div class='category col-3'>
@@ -224,7 +275,7 @@
       <section class=''>
         <div class='container mt-4'>
             <div class='admission-news__heading'>
-                <h3 class='title'>Liên hệ</h3>
+                <h2 class='title highlight-underline'>Liên hệ</h2>
             </div>
         </div>
     </section>

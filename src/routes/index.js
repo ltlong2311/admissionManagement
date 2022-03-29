@@ -18,6 +18,6 @@ function route(app) {
   //     res.render('search');
   // });
 
-}
+} 
 
 module.exports = route;
