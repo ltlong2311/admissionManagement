@@ -45,13 +45,10 @@
                         </div>
                     </div>
                 </div>
-                <div class='col'>
-                    <div class='slider'>
-                        <img
-                            src='http://ts.actvn.edu.vn/Upload/svda/treo-tuong-web-1.jpg'
-                            alt=''
-                        />
-                    </div>
+                <div class='col-9'>
+     
+                      {{> slider}}    
+
                 </div>
             </div>
         </div>
@@ -186,12 +183,58 @@
             <div class='specialized-training__heading heading--center'>
                 <h2 class='highlight-underline'>Chuyên ngành đào tạo</h2>
             </div>
-                 <h3 class='Sub-title'>Cơ sở phía bắc</h3>
-            <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                    <h5 class="card-title">Info card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h3 class='Sub-title'>Cơ sở phía Bắc</h3>
+            <div class='row px-3 major-list'>
+                <div
+                    class='card text-white bg-info mb-3 mr-1'
+                    style='max-width: 18rem;'
+                >
+                    <div class='card-header'>Công nghệ thông tin</div>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Info card title</h5>
+                        <p class='card-text'>Some quick example text to build on
+                            the card title and make up the bulk of the card's
+                            content.</p>
+                    </div>
+                </div>
+                <div
+                    class='card text-white bg-info mb-3'
+                    style='max-width: 18rem;'
+                >
+                    <div class='card-header'>An toàn thông tin</div>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Info card title</h5>
+                        <p class='card-text'>Some quick example text to build on
+                            the card title and make up the bulk of the card's
+                            content.</p>
+                    </div>
+                </div>
+            </div>
+            <h3 class='Sub-title'>Cơ sở phía Nam</h3>
+            <div class='row px-3 major-list'>
+                <div
+                    class='card text-white bg-info mb-3'
+                    style='max-width: 18rem;'
+                >
+                    <div class='card-header'>Header</div>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Info card title</h5>
+                        <p class='card-text'>Some quick example text to build on
+                            the card title and make up the bulk of the card's
+                            content.</p>
+                    </div>
+                </div>
+                <div
+                    class='card text-white bg-info mb-3'
+                    style='max-width: 18rem;'
+                >
+                    <div class='card-header'>Header</div>
+                    <div class='card-body'>
+                        <h5 class='card-title'>Info card title</h5>
+                        <p class='card-text'>Some quick example text to build on
+                            the card title and make up the bulk of the card's
+                            content.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -202,22 +245,30 @@
                 <h2 class='highlight-underline'>Cơ sở vật chất</h2>
             </div>
             <div class='row infrastructure__content'>
-                {{#each newsList}}
-                    <div class='col-sm-6 col-lg-3'>
-                        <div class='card'>
-                            <div class="card bg-dark text-white">
-                                <div class="card-img-overlay">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text">Last updated 3 mins ago</p>
+                <div class='swiper mySwiper infrastructure-slider'>
+                    <div class='swiper-wrapper'>
+                        {{#each newsList}}
+                        {{! <div class='col-sm-6 col-lg-3'> }}
+                        <div class='swiper-slide card'>
+                            <div class='card bg-dark text-white'>
+                                <div class='card-img-overlay'>
+                                    <h5 class='card-title'>Card title</h5>
+                                    <p class='card-text'>This is a wider card
+                                        with supporting text below as a natural
+                                        lead-in to additional content. This
+                                        content is a little bit longer.</p>
+                                    <p class='card-text'>Last updated 3 mins ago</p>
                                 </div>
-                                <img class="card-img" src='{{this.image}}' alt="Card image">
-                             </div>
-                    
+                                <img class="card-img" src='{{this.image}}' alt="Card image" />
+                            </div>
                         </div>
+                        {{!-- </div> --}}
+                        {{/each}}
                     </div>
-
-                {{/each}}
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination display-none"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -260,9 +311,9 @@
                     {{/each}}
                 </div>
             </div>
-            <div class='category col-3'>
-                <div class='category-list bg--lightBlue'>
-                    <div class='category-list__heading bg--heading'>
+            <div class='announcement col-3'>
+                <div class='announcement-list bg--lightBlue'>
+                    <div class='announcement-list__heading .bg--lightEB'>
                         <h3 class='title'>Thông báo</h3>
                     </div>
                     <div class='category-list__content bg--lightBlue'>
@@ -281,3 +332,22 @@
     </section>
     {{> banner}}
 </div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".infrastructure-slider", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    slidesPerGroup: 3,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    });
+</script>

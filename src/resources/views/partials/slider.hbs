@@ -1,0 +1,61 @@
+<div class='swiper mySwiper image-slider'>
+    <div class='swiper-wrapper slider'>
+        <div class='swiper-slide'>
+            <img
+                src='http://ts.actvn.edu.vn/Upload/svda/treo-tuong-web-1.jpg'
+                alt=''
+            />
+        </div>
+        <div class='swiper-slide'>
+            <img
+                src='http://ts.actvn.edu.vn/Upload/svda/treo-tuong-web-1.jpg'
+                alt=''
+            />
+        </div>
+         <div class='swiper-slide'>
+            <img
+                src='https://phunugioi.com/wp-content/uploads/2020/02/anh-phong-canh-hung-vy-nui-va-song.jpg'
+                alt=''
+            />
+        </div>
+    </div>
+    <div class="swiper-button-next next-slide"></div>
+    <div class="swiper-button-prev prev-slide"></div>
+    <div class="swiper-pagination"></div>
+</div>
+
+ {{!-- <div class="swiper mySwiper image-slider">
+      <div class="swiper-wrapper slider">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div> --}}
+
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".image-slider", {
+    spaceBetween: 0,
+    centeredSlides: true,
+    slidesPerView: 1,
+    loop: true,
+    autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    });
+</script>
