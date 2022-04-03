@@ -26,3 +26,9 @@
     </body>
 </html>
 
+<script type="text/javascript">
+   window.addEventListener("scroll", function(){
+       var navbar1 = document.getElementById("mainNav");
+       navbar1.classList.toggle("sticky", window.scrollY > 0);
+   })
+</script>

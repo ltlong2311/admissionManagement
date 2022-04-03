@@ -60,6 +60,30 @@
         //     }
         // }
 
+        .slider {
+            position: relative;
+            // width: calc(100% - );
+            width: 60%;
+
+            .next-slide,
+            .prev-slide {
+                color: $grayD;
+
+                &::after {
+                    font-size: 1.2rem;
+                    font-weight: 800;
+                }
+            }
+
+            .swiper-pagination-bullet {
+                background-color: $whiteT;
+            }
+
+            .swiper-pagination-bullet-active {
+                background-color: $lightT;
+            }
+        }
+
 
         .swiper {
             position: relative;
@@ -202,28 +226,50 @@
 
     .infrastructure {
         .infrastructure__content {
+            position: relative;
 
-            // .swiper {
-            //     width: 20%;
-            // }
-            .card {
-                overflow: hidden;
-            }
+            // display: block;
+            .swiper {
+                height: 15rem;
 
-            .card-img-overlay {
-                z-index: 1;
+                .card {
+                    overflow: hidden;
 
-                &:hover~.card-img {
-                    transform: scale(1.1);
+                    .card-img-overlay {
+                        z-index: 1;
+
+                        &:hover~.card-img {
+                            transform: scale(1.1);
+                        }
+                    }
+
+                    img {
+                        transform: scale(1);
+                        transition: 1s;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
                 }
             }
 
-            img {
-                transform: scale(1);
-                transition: 1s;
+            .next-card {
+                right: 10rem;
+                color: $eastBay;
 
-                &:hover {
-                    transform: scale(1.1);
+                &::after {
+                    font-size: 1.2rem;
+                    font-weight: 800;
+                }
+            }
+            .prev-card {
+                left: 10rem;
+                color: $eastBay;
+
+                &::after {
+                    font-size: 1.2rem;
+                    font-weight: 800;
                 }
             }
 
@@ -231,6 +277,14 @@
     }
 
     .news-events {
+        .news-events__heading {
+            text-align: center;
+
+            .highlight-underline {
+                margin-top: 0;
+            }
+        }
+
         .news-events__content {}
 
         .announcement {
@@ -252,6 +306,9 @@
                 }
             }
         }
+    }
+    .contact {
+        
     }
 
     section {

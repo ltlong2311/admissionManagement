@@ -45,10 +45,8 @@
                         </div>
                     </div>
                 </div>
-                <div class='col-9'>
-     
-                      {{> slider}}    
-
+                <div class='col slider'>
+                    {{> slider}}    
                 </div>
             </div>
         </div>
@@ -240,12 +238,12 @@
         </div>
     </section>
     <section class='infrastructure bg--section'>
-        <div class='container mt-4'>
+        <div class='mt-4'>
             <div class='infrastructure__heading heading--center'>
                 <h2 class='highlight-underline'>Cơ sở vật chất</h2>
             </div>
-            <div class='row infrastructure__content'>
-                <div class='swiper mySwiper infrastructure-slider'>
+            <div class='infrastructure__content'>
+                <div class='infrastructure-slider swiper mySwiper container'>
                     <div class='swiper-wrapper'>
                         {{#each newsList}}
                         {{! <div class='col-sm-6 col-lg-3'> }}
@@ -265,10 +263,20 @@
                         {{!-- </div> --}}
                         {{/each}}
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination display-none"></div>
                 </div>
+                <div class="swiper-button-next next-card"></div>
+                <div class="swiper-button-prev prev-card"></div>
+                <div class="swiper-pagination display-none"></div>
+            </div>
+        </div>
+    </section>
+    <section class=''>
+        <div class='mt-4'>
+            <div class=' heading--center'>
+                <h2 class='highlight-underline'>Học phí - học bổng</h2>
+            </div>
+            <div class='infrastructure__content'>
+              
             </div>
         </div>
     </section>
@@ -277,7 +285,7 @@
         <div class='row'>
             <div class='news-events-list col-9'>
                 <div class='news-events__heading'>
-                    <h2 class='title'>Tin tức - sự kiện</h2>
+                    <h2 class='title highlight-underline'>Tin tức - sự kiện</h2>
                 </div>
                 <div class='row news-events__content'>
                      {{#each newsList}}
@@ -313,19 +321,65 @@
             </div>
             <div class='announcement col-3'>
                 <div class='announcement-list bg--lightBlue'>
-                    <div class='announcement-list__heading .bg--lightEB'>
+                    <div class='announcement-list__heading bg--lightEB'>
                         <h3 class='title'>Thông báo</h3>
                     </div>
                     <div class='category-list__content bg--lightBlue'>
-                        
+                         <ul class='list'>
+                            <li class='list-item'>
+                                <a href='#' alt='' title='Giới thiệu'>Giới
+                                    thiệu</a>
+                            </li>
+                            <li class='list-item'>
+                                <a
+                                    href='#'
+                                    alt=''
+                                    title='Thông báo tuyển sinh'
+                                >Thông báo tuyển sinh</a>
+                            </li>
+                            <li class='list-item'>
+                                <a
+                                    href='#'
+                                    alt=''
+                                    title='Phương thức tuyển sinh'
+                                >Phương thức tuyển sinh</a>
+                            </li>
+                            <li class='list-item'>
+                                <a href='#' alt='' title='Học phí'>Học phí</a>
+                            </li>
+                            <li class='list-item'>
+                                <a href='#' alt='' title='Học bổng'>Học bổng</a>
+                            </li>
+                            <li class='list-item'>
+                                <a
+                                    href='#'
+                                    alt=''
+                                    title='Chuyên ngành đào tạo'
+                                >Chuyên ngành đào tạo</a>
+                            </li>
+                            <li class='list-item'>
+                                <a href='#' alt='' title=''>Hướng dẫn đăng
+                                    ký</a>
+                            </li>
+                            <li class='list-item'>
+                                <a href='#' alt='' title=''>Câu hỏi thường
+                                    gặp</a>
+                            </li>
+                            <li class='list-item'>
+                                <a href='#' alt='' title=''>Tin tức-sự kiện</a>
+                            </li>
+                            <li class='list-item'>
+                                <a href='#' alt='' title=''>Liên hệ</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-      <section class=''>
+    <section class='contact'>
         <div class='container mt-4'>
-            <div class='admission-news__heading'>
+            <div class='contact__heading .heading--center'>
                 <h2 class='title highlight-underline'>Liên hệ</h2>
             </div>
         </div>
