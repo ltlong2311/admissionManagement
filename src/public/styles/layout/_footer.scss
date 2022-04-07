@@ -21,15 +21,17 @@ footer {
         padding-bottom: 0px;
         margin-bottom: 8px;
     }
-    
 
-    .kma-link {
-        color: $greenTee;
-    }
 
+    .kma-link,
     .footer-icon {
         color: $greenTee;
+
+        &:hover {
+            color: $yellowGon;
+        }
     }
+
 }
 
 .mb10 {
@@ -103,8 +105,12 @@ footer {
         display: inline;
 
         a {
-            color: $grayD;
+            color: $grayDaz;
             margin: 0 12px;
+
+            &:hover {
+                color: $lightBlue;
+            }
         }
     }
 }

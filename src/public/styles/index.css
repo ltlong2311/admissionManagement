@@ -134,12 +134,14 @@ footer p {
   margin-bottom: 8px;
 }
 
-footer .kma-link {
+footer .kma-link,
+footer .footer-icon {
   color: #38D45B;
 }
 
-footer .footer-icon {
-  color: #38D45B;
+footer .kma-link:hover,
+footer .footer-icon:hover {
+  color: #daeb16;
 }
 
 .mb10 {
@@ -212,8 +214,12 @@ footer .footer-icon {
 }
 
 .foote_bottom_ul_amrc li a {
-  color: #c1c6ad;
+  color: #b8c0b8;
   margin: 0 12px;
+}
+
+.foote_bottom_ul_amrc li a:hover {
+  color: #ddfafa;
 }
 
 .social_footer_ul {
