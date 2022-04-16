@@ -15,6 +15,7 @@ const News = new Schema({
 
 // Add soft delete plugin
 mongoose.plugin(slug);
+
 News.plugin(mongooseDelete, { 
   overrideMethods: 'all',
   deletedAt: true,

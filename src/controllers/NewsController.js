@@ -78,7 +78,7 @@ class NewsController {
             .catch(next);
     }
 
-    // [POST] /news/store
+    // [POST] /news/store              -------create---------
     store(req, res, next) {
         const formData = req.body;
         // formData.image = `https://image.com/${req.body.image}/kma.jpg`
