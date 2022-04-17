@@ -1,21 +1,21 @@
-const Post = require('../../models/Post');
+const Infrastructure = require('../../models/Infrastructure');
 // const { mongooseToObject } = require('../util/mongoose');
 
-class PostController {
+class InfrastructureController {
     // [GET] /api/Post
     getAll(req, res) {
-        Post.find({})
-            .then((post) => res.status(200).json({ status: true, data: post }))
+        Infrastructure.find({})
+            .then((list) => res.status(200).json({ status: true, data: list }))
             .catch((err) => res.json({ message: err }));
     }
     // [GET] /api/Post/:id
     getById = async (req, res) => {
         console.log('id', req.params);
-        Post.findOne({ _id: req.params.id })
+        Infrastructure.findOne({ _id: req.params.id })
             .select('title description image')
-            .then((postItem) => {
-                console.log('findOne', postItem);
-                res.json({ status: true, data: postItem });
+            .then((item) => {
+                console.log('findOne', item);
+                res.json({ status: true, data: item });
             })
             .catch((err) => {
                 res.json({ message: err });
@@ -27,18 +27,18 @@ class PostController {
     getItemById = async (req, res) => {
         console.log('id', req.query.id);
         if (!!req.query.id) {
-            Post.findOne({ _id: req.query.id })
+            Infrastructure.findOne({ _id: req.query.id })
                 .select('name description image')
-                .then((postItem) => {
-                    console.log('findOne', postItem);
-                    res.json({ status: true, data: postItem });
+                .then((item) => {
+                    console.log('findOne', item);
+                    res.json({ status: true, data: item });
                 })
                 .catch((err) => res.json({ message: err }));
         } else {
-            Post.find({})
+            Infrastructure.find({})
                 .select('name description image')
-                .then((post) =>
-                    res.status(200).json({ status: true, data: post })
+                .then((list) =>
+                    res.status(200).json({ status: true, data: list })
                 )
                 .catch((err) => res.json({ message: err }));
         }
@@ -47,14 +47,14 @@ class PostController {
     create = async (req, res) => {
         // formData.image = `https://image.com/${req.body.image}/kma.jpg`
         console.log(req.body);
-        const post = new Post(req.body);
-        post.save()
+        const newItem = new Infrastructure(req.body);
+        newItem.save()
             .then(
                 (result) =>
                     res.status(200).json({
                         status: true,
                         data: result,
-                        message: 'Create Post success!',
+                        message: 'Create Infrastructure success!',
                     }) // doesn't run
                 // (error) => console.log(error)
             )
@@ -66,31 +66,30 @@ class PostController {
     };
     // [PUT] /update-Post:id
     update = async (req, res) => {
-        // const post = post;
-        Post.updateOne({ _id: req.params.id }, req.body)
-            .then(() => res.redirect('/me/stored/psost'))
+        Infrastructure.updateOne({ _id: req.params.id }, req.body)
+            .then(() => res.redirect('/me/stored/post'))
             .catch(next);
     };
     // [POST] /delete:id
     delete(req, res, next) {
         // soft delete
-        Post.delete({ _id: req.params.id })
+        Infrastructure.delete({ _id: req.params.id })
             .then(res.json({ status: true, message: 'Delete success' }))
             .catch(next);
     }
     // [POST] /restore:id
     restore(req, res, next) {
-        Post.restore({ _id: req.params.id })
+        Infrastructure.restore({ _id: req.params.id })
             .then(res.json({ status: true, message: 'Restore success' }))
             .catch(next);
     }
 
     // [DELETE] /Post/:id/force
     destroy(req, res, next) {
-        delete Post.deleteOne({ _id: req.params.id })
+        delete Infrastructure.deleteOne({ _id: req.params.id })
             .then(res.json({ status: true, message: 'Destroyed' }))
             .catch(next);
     }
 }
 
-module.exports = new PostController();
+module.exports = new InfrastructureController();

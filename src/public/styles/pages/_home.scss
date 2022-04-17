@@ -201,6 +201,11 @@
                 }
             }
 
+            .admission-news__content {
+                .card {
+                    margin-bottom: 1.2rem;
+                }
+            }
         }
 
         @media only screen and (max-width: $_992) {
@@ -211,7 +216,16 @@
 
     }
 
-    .college-admissions {}
+    .college-admissions {
+        .college-admissions__content {
+            position: relative;
+
+            // padding-bottom: 1.5rem;
+            .card {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
 
     .specialized-training {
         .Sub-title {
@@ -221,14 +235,39 @@
 
         .major-list {
             justify-content: space-evenly;
+            // justify-content: space-around;
+            padding: 0.9rem 0;
+            // .card {
+            //     margin-right: 3rem;
+            // }
         }
     }
 
     .infrastructure {
+        padding-bottom: 1.2rem;
+
         .infrastructure__content {
             position: relative;
 
+            // padding-bottom: 1.5rem;
             // display: block;
+            .infrastructure-slider {
+                .card {
+                    height: 100%;
+                }
+
+                .infrastructure-info {
+                    display: none;
+                    padding: 0.6rem 0.9rem;
+                    transition: all 1s;
+                }
+
+                .infrastructure-image {
+                    &:hover~.infrastructure-info {
+                        display: block;
+                    }
+                }
+            }
             .swiper {
                 height: 15rem;
 
@@ -237,9 +276,15 @@
 
                     .card-img-overlay {
                         z-index: 1;
-
+                        // background-color: rgba(0, 0, 0, 0.1);
                         &:hover~.card-img {
                             transform: scale(1.1);
+                        };
+                        &:hover {
+                            .infrastructure-info {
+                                display: block;
+                                background-color: rgba(0, 0, 0, 0.3);
+                            }
                         }
                     }
 
@@ -249,6 +294,10 @@
 
                         &:hover {
                             transform: scale(1.1);
+                        }
+
+                        &:hover~.infrastructure-info {
+                            display: block;
                         }
                     }
                 }
@@ -263,6 +312,7 @@
                     font-weight: 800;
                 }
             }
+
             .prev-card {
                 left: 10rem;
                 color: $eastBay;
@@ -272,7 +322,6 @@
                     font-weight: 800;
                 }
             }
-
         }
     }
 
@@ -285,7 +334,11 @@
             }
         }
 
-        .news-events__content {}
+        .news-events__content {
+            .card {
+                margin-top: 1.2rem;
+            }
+        }
 
         .announcement {
             .announcement-list {
@@ -307,8 +360,11 @@
             }
         }
     }
-    .contact {
-        
+
+    .activities {
+        .activities__heading {
+            position: relative;
+        }
     }
 
     section {

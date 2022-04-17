@@ -70,7 +70,7 @@ class NewsController {
     };
     // [PUT] /update-news:id
     update = async (req, res) => {
-        const news = news;
+        // const news = news;
         News.updateOne({ _id: req.params.id }, req.body)
             .then(() => res.redirect('/me/stored/news'))
             .catch(next);

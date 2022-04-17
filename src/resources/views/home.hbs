@@ -115,10 +115,10 @@
                         <h3 class='title'>Tin tuyển sinh</h3>
                     </div> }}
                     <div class='row admission-news__content'>
-                        {{#each newsList}}
+                        {{#each mainPostList}}
                             <div class='col-sm-6 col-lg-4'>
                                 <div class='card'>
-                                    <a href='/news/{{this.slug}}'>
+                                    <a href='/post/{{this.slug}}'>
                                         <img
                                             src='{{this.image}}'
                                             class='card-img-top'
@@ -126,10 +126,10 @@
                                         />
                                     </a>
                                     <div class='card-body'>
-                                        <a href='/news/{{this.slug}}'>
+                                        <a href='/post/{{this.slug}}'>
                                             <h5
                                                 class='card-title'
-                                            >{{this.name}}</h5>
+                                            >{{this.title}}</h5>
                                         </a>
                                         <p
                                             class='card-text'
@@ -150,7 +150,7 @@
                 <h2 class='highlight-underline'>Tuyển sinh đại học</h2>
             </div>
             <div class='row college-admissions__content'>
-                {{#each newsList}}
+                {{#each admissionsPostList}}
                     <div class='col-sm-6 col-lg-3'>
                         <div class='card'>
                             <a href='/news/{{this.slug}}'>
@@ -164,11 +164,11 @@
                                 <a href='/news/{{this.slug}}'>
                                     <h5
                                         class='card-title'
-                                    >{{this.name}}</h5>
+                                    >{{this.title}}</h5>
                                 </a>
-                                <p
+                                {{!-- <p
                                     class='card-text'
-                                >{{this.description}}</p>
+                                >{{this.description}}</p> --}}
                             </div>
                         </div>
                     </div>
@@ -182,59 +182,36 @@
                 <h2 class='highlight-underline'>Chuyên ngành đào tạo</h2>
             </div>
             <h3 class='Sub-title'>Cơ sở phía Bắc</h3>
-            <div class='row px-3 major-list'>
-                <div
-                    class='card text-white bg-info mb-3 mr-1'
-                    style='max-width: 18rem;'
-                >
-                    <div class='card-header'>Công nghệ thông tin</div>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Info card title</h5>
-                        <p class='card-text'>Some quick example text to build on
-                            the card title and make up the bulk of the card's
-                            content.</p>
+            <div class='row px-5 major-list'>
+                {{#each specializedNorthList}}
+                    <div
+                        class='card text-white bg-info mb-3 mr-1'
+                        style='max-width: 18rem;'
+                    >
+                        <div class='card-header'>{{this.name}}</div>
+                        <div class='card-body'>
+                            {{!-- <h5 class='card-title'>Info card title</h5> --}}
+                            <p class='card-text'>Mã ngành: {{this.industry_code}}</p>
+                            <p class='card-text'>Chỉ tiêu tuyển sinh: {{this.admission_quota}}</p>
+                        </div>
                     </div>
-                </div>
-                <div
-                    class='card text-white bg-info mb-3'
-                    style='max-width: 18rem;'
-                >
-                    <div class='card-header'>An toàn thông tin</div>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Info card title</h5>
-                        <p class='card-text'>Some quick example text to build on
-                            the card title and make up the bulk of the card's
-                            content.</p>
-                    </div>
-                </div>
+                {{/each}}
             </div>
             <h3 class='Sub-title'>Cơ sở phía Nam</h3>
-            <div class='row px-3 major-list'>
-                <div
-                    class='card text-white bg-info mb-3'
-                    style='max-width: 18rem;'
-                >
-                    <div class='card-header'>Header</div>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Info card title</h5>
-                        <p class='card-text'>Some quick example text to build on
-                            the card title and make up the bulk of the card's
-                            content.</p>
+            <div class='row px-5 major-list'>
+                {{#each specializedSouthList}}
+                    <div
+                        class='card text-white bg-info mb-3'
+                        style='max-width: 18rem;'
+                    >
+                        <div class='card-header'>{{this.name}}</div>
+                        <div class='card-body'>
+                            {{!-- <h5 class='card-title'>Info card title</h5> --}}
+                            <p class='card-text'>Mã ngành: {{this.industry_code}}</p>
+                            <p class='card-text'>Chỉ tiêu tuyển sinh: {{this.admission_quota}}</p>
+                        </div>
                     </div>
-                </div>
-                <div
-                    class='card text-white bg-info mb-3'
-                    style='max-width: 18rem;'
-                >
-                    <div class='card-header'>Header</div>
-                    <div class='card-body'>
-                        <h5 class='card-title'>Info card title</h5>
-                        <p class='card-text'>Some quick example text to build on
-                            the card title and make up the bulk of the card's
-                            content.</p>
-                    </div>
-                </div>
-            </div>
+                {{/each}}
         </div>
     </section>
     <section class='infrastructure bg--section'>
@@ -245,19 +222,18 @@
             <div class='infrastructure__content'>
                 <div class='infrastructure-slider swiper mySwiper container'>
                     <div class='swiper-wrapper'>
-                        {{#each newsList}}
+                        {{#each infrastructureList}}
                         {{! <div class='col-sm-6 col-lg-3'> }}
                         <div class='swiper-slide card'>
                             <div class='card bg-dark text-white'>
                                 <div class='card-img-overlay'>
-                                    <h5 class='card-title'>Card title</h5>
-                                    <p class='card-text'>This is a wider card
-                                        with supporting text below as a natural
-                                        lead-in to additional content. This
-                                        content is a little bit longer.</p>
-                                    <p class='card-text'>Last updated 3 mins ago</p>
+                                    <div class="infrastructure-info">
+                                        <h5 class='card-title'>{{this.title}}</h5>
+                                        <p class='card-text'>{{this.description}}.</p>
+                                    </div>
+                                    {{!-- <p class='card-text'>Last updated 3 mins ago</p> --}}
                                 </div>
-                                <img class="card-img" src='{{this.image}}' alt="Card image" />
+                                <img class="card-img infrastructure-image" src='{{this.image}}' alt="Card image" />
                             </div>
                         </div>
                         {{!-- </div> --}}
@@ -312,7 +288,7 @@
                                         alt=''
                                         title=''
                                         class='btn btn-primary'
-                                    >Go somewhere</a>
+                                    >Xem chi tiết</a>
                                 </div>
                             </div>
                         </div>
@@ -325,66 +301,27 @@
                         <h3 class='title'>Thông báo</h3>
                     </div>
                     <div class='category-list__content bg--lightBlue'>
-                         <ul class='list'>
+                         {{!-- <ul class='list'>
                             <li class='list-item'>
                                 <a href='#' alt='' title='Giới thiệu'>Giới
                                     thiệu</a>
-                            </li>
-                            <li class='list-item'>
-                                <a
-                                    href='#'
-                                    alt=''
-                                    title='Thông báo tuyển sinh'
-                                >Thông báo tuyển sinh</a>
-                            </li>
-                            <li class='list-item'>
-                                <a
-                                    href='#'
-                                    alt=''
-                                    title='Phương thức tuyển sinh'
-                                >Phương thức tuyển sinh</a>
-                            </li>
-                            <li class='list-item'>
-                                <a href='#' alt='' title='Học phí'>Học phí</a>
-                            </li>
-                            <li class='list-item'>
-                                <a href='#' alt='' title='Học bổng'>Học bổng</a>
-                            </li>
-                            <li class='list-item'>
-                                <a
-                                    href='#'
-                                    alt=''
-                                    title='Chuyên ngành đào tạo'
-                                >Chuyên ngành đào tạo</a>
-                            </li>
-                            <li class='list-item'>
-                                <a href='#' alt='' title=''>Hướng dẫn đăng
-                                    ký</a>
-                            </li>
-                            <li class='list-item'>
-                                <a href='#' alt='' title=''>Câu hỏi thường
-                                    gặp</a>
-                            </li>
-                            <li class='list-item'>
-                                <a href='#' alt='' title=''>Tin tức-sự kiện</a>
-                            </li>
-                            <li class='list-item'>
-                                <a href='#' alt='' title=''>Liên hệ</a>
-                            </li>
-                        </ul>
+                            </li>   
+                        </ul> --}}
+                           <a href='#' alt='' title='Giới thiệu'>Giới
+                                    thiệu</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class='contact'>
+    <section class='activities'>
         <div class='container mt-4'>
-            <div class='contact__heading .heading--center'>
-                <h2 class='title highlight-underline'>Liên hệ</h2>
+            <div class='activities__heading heading--center'>
+                <h2 class='title highlight-underline'>Hoạt động</h2>
             </div>
         </div>
     </section>
-    {{> banner}}
+    {{!-- {{> banner}} --}}
 </div>
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -392,9 +329,13 @@
     var swiper = new Swiper(".infrastructure-slider", {
     slidesPerView: 4,
     spaceBetween: 30,
-    slidesPerGroup: 3,
+    slidesPerGroup: 5,
     loop: true,
-    loopFillGroupWithBlank: true,
+    loopFillGroupWithBlank: false,
+    autoplay: {
+        delay: 13500,
+        disableOnInteraction: false,
+    },
     pagination: {
         el: ".swiper-pagination",
         clickable: true,

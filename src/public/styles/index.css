@@ -475,10 +475,22 @@ footer .footer-icon:hover {
   font-weight: 700;
 }
 
+.home-page .recommended-news .admission-news .admission-news__content .card {
+  margin-bottom: 1.2rem;
+}
+
 @media only screen and (max-width: 992px) {
   .home-page .recommended-news .category {
     display: none;
   }
+}
+
+.home-page .college-admissions .college-admissions__content {
+  position: relative;
+}
+
+.home-page .college-admissions .college-admissions__content .card {
+  margin-bottom: 1.5rem;
 }
 
 .home-page .specialized-training .Sub-title {
@@ -490,10 +502,30 @@ footer .footer-icon:hover {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  padding: 0.9rem 0;
+}
+
+.home-page .infrastructure {
+  padding-bottom: 1.2rem;
 }
 
 .home-page .infrastructure .infrastructure__content {
   position: relative;
+}
+
+.home-page .infrastructure .infrastructure__content .infrastructure-slider .card {
+  height: 100%;
+}
+
+.home-page .infrastructure .infrastructure__content .infrastructure-slider .infrastructure-info {
+  display: none;
+  padding: 0.6rem 0.9rem;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.home-page .infrastructure .infrastructure__content .infrastructure-slider .infrastructure-image:hover ~ .infrastructure-info {
+  display: block;
 }
 
 .home-page .infrastructure .infrastructure__content .swiper {
@@ -513,6 +545,11 @@ footer .footer-icon:hover {
           transform: scale(1.1);
 }
 
+.home-page .infrastructure .infrastructure__content .swiper .card .card-img-overlay:hover .infrastructure-info {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .home-page .infrastructure .infrastructure__content .swiper .card img {
   -webkit-transform: scale(1);
           transform: scale(1);
@@ -523,6 +560,10 @@ footer .footer-icon:hover {
 .home-page .infrastructure .infrastructure__content .swiper .card img:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.home-page .infrastructure .infrastructure__content .swiper .card img:hover ~ .infrastructure-info {
+  display: block;
 }
 
 .home-page .infrastructure .infrastructure__content .next-card {
@@ -553,6 +594,10 @@ footer .footer-icon:hover {
   margin-top: 0;
 }
 
+.home-page .news-events .news-events__content .card {
+  margin-top: 1.2rem;
+}
+
 .home-page .news-events .announcement .announcement-list .announcement-list__heading {
   width: 100%;
   display: -webkit-box;
@@ -569,6 +614,10 @@ footer .footer-icon:hover {
   font-weight: 700;
   text-transform: uppercase;
   padding: 0.65rem 1.2rem;
+}
+
+.home-page .activities .activities__heading {
+  position: relative;
 }
 
 .home-page section .heading--center {

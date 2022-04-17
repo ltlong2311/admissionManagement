@@ -7,15 +7,15 @@ const mongooseDelete = require('mongoose-delete');
 const Post = new Schema(
     {
         _id: Number,
-        name: { type: String, required: true },
+        title: { type: String, required: true },
         description: { type: String },
         image: { type: String },
         content: { type: String, required: true },
         type: { type: Number },
-        slug: { type: String, slug: 'name', unique: true },
+        slug: { type: String, slug: 'title', unique: true },
     },
     {
-        _id: false,       // de mongodb k can thiep vao truong nay
+        _id: false, // de mongodb k can thiep vao truong nay
         timestamps: true,
     }
 );
@@ -23,7 +23,7 @@ const Post = new Schema(
 // Add soft delete plugin
 mongoose.plugin(slug);
 // add auto increment
-Post.plugin(AutoIncrement, { inc_field: '_id' });
+Post.plugin(AutoIncrement, { id: 'post_id_counter', inc_field: '_id' });
 
 Post.plugin(mongooseDelete, {
     overrideMethods: 'all',

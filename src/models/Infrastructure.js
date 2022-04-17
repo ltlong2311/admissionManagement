@@ -7,12 +7,10 @@ const mongooseDelete = require('mongoose-delete');
 const Infrastructure = new Schema(
     {
         _id: Number,
-        name: { type: String, required: true },
+        title: { type: String, required: true },
         description: { type: String },
         image: { type: String },
-        content: { type: String, required: true },
-        type: { type: Number },
-        slug: { type: String, slug: 'name', unique: true },
+        slug: { type: String, slug: 'title', unique: true },
     },
     {
         _id: false,
@@ -23,7 +21,10 @@ const Infrastructure = new Schema(
 // Add soft delete plugin
 mongoose.plugin(slug);
 // add auto increment
-Infrastructure.plugin(AutoIncrement, { inc_field: '_id' });
+Infrastructure.plugin(AutoIncrement, {
+    id: 'infrastructure_id_counter',
+    inc_field: '_id',
+});
 
 Infrastructure.plugin(mongooseDelete, {
     overrideMethods: 'all',
