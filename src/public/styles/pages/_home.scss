@@ -65,22 +65,38 @@
             // width: calc(100% - );
             width: 60%;
 
-            .next-slide,
-            .prev-slide {
-                color: $grayD;
+            .swiper {
+                .next-slide,
+                .prev-slide {
+                    visibility: hidden;
 
-                &::after {
-                    font-size: 1.2rem;
-                    font-weight: 800;
+                    &::after {
+                        font-size: 1.2rem;
+                        font-weight: 800;
+                    }
+                }
+
+                // &:hover {
+                //     transform: scale(2.1);
+                // }
+
+                &:hover .next-slide,
+                &:hover .prev-slide {
+                    visibility: visible;
+                    &::after {
+                        background: -webkit-linear-gradient(360deg, #54e0a6, #fdf144);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
                 }
             }
 
             .swiper-pagination-bullet {
-                background-color: $whiteT;
+                // background-color: $whiteT;
             }
 
             .swiper-pagination-bullet-active {
-                background-color: $lightT;
+                background-color: $deepSkyBlue;
             }
         }
 
@@ -251,8 +267,17 @@
 
             // padding-bottom: 1.5rem;
             // display: block;
+            .center-content {
+                position: relative;
+            }
+
             .infrastructure-slider {
                 .card {
+                    height: 100%;
+                }
+
+                .infrastructure-card {
+                    width: 100%;
                     height: 100%;
                 }
 
@@ -263,11 +288,14 @@
                 }
 
                 .infrastructure-image {
+                    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
                     &:hover~.infrastructure-info {
                         display: block;
                     }
                 }
             }
+
             .swiper {
                 height: 15rem;
 
@@ -276,10 +304,14 @@
 
                     .card-img-overlay {
                         z-index: 1;
+
                         // background-color: rgba(0, 0, 0, 0.1);
-                        &:hover~.card-img {
-                            transform: scale(1.1);
-                        };
+                        &:hover {
+                            ~.card-img {
+                                transform: scale(1.1);
+                            }
+                        }
+
                         &:hover {
                             .infrastructure-info {
                                 display: block;
@@ -304,8 +336,9 @@
             }
 
             .next-card {
-                right: 10rem;
                 color: $eastBay;
+                position: absolute;
+                right: -2rem;
 
                 &::after {
                     font-size: 1.2rem;
@@ -314,8 +347,9 @@
             }
 
             .prev-card {
-                left: 10rem;
                 color: $eastBay;
+                position: absolute;
+                left: -2rem;
 
                 &::after {
                     font-size: 1.2rem;

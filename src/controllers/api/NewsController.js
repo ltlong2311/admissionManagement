@@ -61,7 +61,13 @@ class NewsController {
         // });
         // console.log("news", news);
         news.save()
-            .then( res.status(200).json({ status: true, data: news, message: "Create news success!" }))
+            .then((result) => {
+                res.status(200).json({
+                    status: true,
+                    message: 'Create news success!',
+                });
+                console.log(result);
+            })
             .catch((error) => {
                 res.json({ status: false, message: error });
                 console.log(error);
@@ -71,29 +77,82 @@ class NewsController {
     // [PUT] /update-news:id
     update = async (req, res) => {
         // const news = news;
-        News.updateOne({ _id: req.params.id }, req.body)
-            .then(() => res.redirect('/me/stored/news'))
-            .catch(next);
+        console.log('query', req.query);
+        console.log('body', req.body);
+        if (!!req.query.id && !!Object.keys(req.body).length) {
+            News.updateOne({ _id: req.query.id }, req.body)
+                .then((result) => {
+                    res.status(200).json({
+                        status: true,
+                        message: 'Update news success!',
+                    });
+                    console.log(result);
+                })
+                .catch((error) => {
+                    res.json({ status: false, message: error });
+                    console.log(error);
+                });
+        } else {
+            res.status(400).json({
+                status: false,
+                message: 'Missing required field',
+            });
+        }
     };
-    // [POST] /delete:id
+    // [POST] /delete-news?id=
     delete(req, res, next) {
         // soft delete
-        News.delete({ _id: req.params.id })
-            .then(res.json({ status: true, message: 'Delete success' }))
-            .catch(next);
+        if (!!req.body.id) {
+            News.delete({ _id: req.body.id })
+                .then(
+                    res
+                        .status(200)
+                        .json({ status: true, message: 'Delete success' })
+                )
+                .catch((error) => {
+                    res.json({ status: false, message: error });
+                    console.log(error);
+                });
+        } else {
+            res.status(400).json({
+                status: false,
+                message: 'Missing required id field',
+            });
+        }
     }
-    // [POST] /restore:id
+    // [PATCH] /restore-news?id=
     restore(req, res, next) {
-        News.restore({ _id: req.params.id })
-            .then(res.json({ status: true, message: 'Restore success' }))
-            .catch(next);
+        console.log('query', req.query);
+        if (!!req.query.id) {
+            News.restore({ _id: req.query.id })
+                .then(res.json({ status: true, message: 'Restore success' }))
+                .catch((error) => {
+                    res.json({ status: false, message: error });
+                    console.log(error);
+                });
+        } else {
+            res.status(400).json({
+                status: false,
+                message: 'Missing required id field',
+            });
+        }
     }
 
-    // [DELETE] /news/:id/force
+    // [DELETE] /destroy-news?id=
     destroy(req, res, next) {
-        delete News.deleteOne({ _id: req.params.id })
-            .then(res.json({ status: true, message: 'Destroyed' }))
-            .catch(next);
+        if (!!req.query.id) {
+            delete News.deleteOne({ _id: req.query.id })
+                .then(res.json({ status: true, message: 'Destroyed!' }))
+                .catch((error) => {
+                    res.json({ status: false, message: error });
+                    console.log(error);
+                });
+        } else {
+            res.status(400).json({
+                status: false,
+                message: 'Missing required id field',
+            });
+        }
     }
 }
 

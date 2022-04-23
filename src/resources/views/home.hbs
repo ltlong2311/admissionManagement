@@ -220,28 +220,33 @@
                 <h2 class='highlight-underline'>Cơ sở vật chất</h2>
             </div>
             <div class='infrastructure__content'>
-                <div class='infrastructure-slider swiper mySwiper container'>
-                    <div class='swiper-wrapper'>
-                        {{#each infrastructureList}}
-                        {{! <div class='col-sm-6 col-lg-3'> }}
-                        <div class='swiper-slide card'>
-                            <div class='card bg-dark text-white'>
-                                <div class='card-img-overlay'>
-                                    <div class="infrastructure-info">
-                                        <h5 class='card-title'>{{this.title}}</h5>
-                                        <p class='card-text'>{{this.description}}.</p>
+                <div class='center-content container'>
+                    <div class="infrastructure-slider swiper mySwiper">
+                        <div class='swiper-wrapper'>
+                            {{#each infrastructureList}}
+                            {{! <div class='col-sm-6 col-lg-3'> }}
+                            <div class='swiper-slide card'>
+                                <div class='infrastructure-card text-white bg--dark'>
+                                    <div class='card-img-overlay'>
+                                        <div class="infrastructure-info">
+                                            <h5 class='card-title'>{{this.title}}</h5>
+                                            <p class='card-text'>{{this.description}}.</p>
+                                        </div>
+                                        {{!-- <p class='card-text'>Last updated 3 mins ago</p> --}}
                                     </div>
-                                    {{!-- <p class='card-text'>Last updated 3 mins ago</p> --}}
+                                    <img class="card-img infrastructure-image" src='{{this.image}}' alt="Card image" />
                                 </div>
-                                <img class="card-img infrastructure-image" src='{{this.image}}' alt="Card image" />
                             </div>
+                            {{!-- </div> --}}
+                            {{/each}}
                         </div>
-                        {{!-- </div> --}}
-                        {{/each}}
                     </div>
+                    <div class="swiper-button-prev prev-card"></div>
+                    <div class="swiper-button-next next-card"></div>
+                    
                 </div>
-                <div class="swiper-button-next next-card"></div>
-                <div class="swiper-button-prev prev-card"></div>
+                {{!-- <div class="swiper-button-next next-card"></div>
+                <div class="swiper-button-prev prev-card"></div> --}}
                 <div class="swiper-pagination display-none"></div>
             </div>
         </div>
@@ -307,8 +312,7 @@
                                     thiệu</a>
                             </li>   
                         </ul> --}}
-                           <a href='#' alt='' title='Giới thiệu'>Giới
-                                    thiệu</a>
+                           <a href='#' alt='' title=''>[Thông báo] Tuyển sinh </a>
                     </div>
                 </div>
             </div>
@@ -329,11 +333,11 @@
     var swiper = new Swiper(".infrastructure-slider", {
     slidesPerView: 4,
     spaceBetween: 30,
-    slidesPerGroup: 5,
+    slidesPerGroup: 1,
     loop: true,
     loopFillGroupWithBlank: false,
     autoplay: {
-        delay: 13500,
+        delay: 3000,
         disableOnInteraction: false,
     },
     pagination: {

@@ -4,9 +4,19 @@ const Post = require('../../models/Post');
 class PostController {
     // [GET] /api/Post
     getAll(req, res) {
-        Post.find({})
-            .then((post) => res.status(200).json({ status: true, data: post }))
-            .catch((err) => res.json({ message: err }));
+        if (!!req.query.type) {
+            Post.find({ type: req.query.type })
+                .then((post) =>
+                    res.status(200).json({ status: true, data: post })
+                )
+                .catch((err) => res.json({ message: err }));
+        } else {
+            Post.find({})
+                .then((post) =>
+                    res.status(200).json({ status: true, data: post })
+                )
+                .catch((err) => res.json({ message: err }));
+        }
     }
     // [GET] /api/Post/:id
     getById = async (req, res) => {
@@ -53,8 +63,7 @@ class PostController {
                 (result) =>
                     res.status(200).json({
                         status: true,
-                        data: result,
-                        message: 'Create Post success!',
+                        message: 'Create post success!',
                     }) // doesn't run
                 // (error) => console.log(error)
             )
@@ -64,32 +73,71 @@ class PostController {
             });
         // console.log('create');
     };
-    // [PUT] /update-Post:id
+    // [PUT] /update-post:id
     update = async (req, res) => {
         // const post = post;
-        Post.updateOne({ _id: req.params.id }, req.body)
-            .then(() => res.redirect('/me/stored/psost'))
-            .catch(next);
+        console.log('param', req.query);
+        console.log('body', req.body);
+        if (!!req.query.id && !!Object.keys(req.body).length) {
+            Post.updateOne({ _id: req.query.id }, req.body)
+                .then((result) => {
+                    res.status(200).json({
+                        status: true,
+                        message: 'Update post success!',
+                    });
+                    console.log(result);
+                })
+                .catch((error) => {
+                    res.json({ status: false, message: error });
+                    console.log(error);
+                });
+        } else {
+            res.status(400).json({
+                status: false,
+                message: 'Missing required field',
+            });
+        }
     };
-    // [POST] /delete:id
+    // [POST] /delete
     delete(req, res, next) {
         // soft delete
-        Post.delete({ _id: req.params.id })
-            .then(res.json({ status: true, message: 'Delete success' }))
-            .catch(next);
+        if (!!req.body.id) {
+            Post.delete({ _id: req.body.id })
+                .then(res.json({ status: true, message: 'Delete success' }))
+                .catch(next);
+        } else {
+            res.status(400).json({
+                status: false,
+                message: 'Missing required id field',
+            });
+        }
     }
-    // [POST] /restore:id
+    // [POST] /restore/:id
     restore(req, res, next) {
-        Post.restore({ _id: req.params.id })
-            .then(res.json({ status: true, message: 'Restore success' }))
-            .catch(next);
+        if (!!req.query.id) {
+            Post.restore({ _id: req.query.id })
+                .then(res.json({ status: true, message: 'Restore success' }))
+                .catch(next);
+        } else {
+            res.status(400).json({
+                status: false,
+                message: 'Missing required id field',
+            });
+        }
     }
 
     // [DELETE] /Post/:id/force
     destroy(req, res, next) {
-        delete Post.deleteOne({ _id: req.params.id })
-            .then(res.json({ status: true, message: 'Destroyed' }))
-            .catch(next);
+        if (!!req.query.id) {
+            delete Post.deleteOne({ _id: req.query.id })
+                .then(res.json({ status: true, message: 'Destroyed' }))
+                .catch(next);
+        } else {
+            res.status(400).json({
+                status: false,
+                message: 'Missing required id field',
+            });
+        }
     }
 }
 
