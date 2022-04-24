@@ -1,3 +1,6 @@
+@import '../utilities/breakPoint';
+@import '../utilities/variable';
+
 .button-1 {
   appearance: button;
   background-color: #801c32;
@@ -8,7 +11,7 @@
   color: #FFFFFF;
   cursor: pointer;
   display: inline-block;
-  font-family: din-round,sans-serif;
+  font-family: din-round, sans-serif;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: .8px;
@@ -27,83 +30,179 @@
   vertical-align: middle;
   white-space: nowrap;
   width: 100%;
+
+  &:after {
+    background-clip: padding-box;
+    background-color: #f04d4d;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  // &:main {
+  //   user-select: auto;
+  // }
+
+  &:focus {
+    user-select: auto;
+  }
+
+  &:hover:not(:disabled) {
+    filter: brightness(1.1);
+  }
+
+  &:disabled {
+    cursor: auto;
+  }
 }
 
-.button-1:after {
-  background-clip: padding-box;
-  background-color: #f04d4d;
-  border: solid transparent;
-  border-radius: 16px;
-  border-width: 0 0 4px;
-  bottom: -4px;
-  content: "";
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: -1;
-}
-
-.button-1:main,
-.button-1:focus {
-  user-select: auto;
-}
-
-.button-1:hover:not(:disabled) {
-  filter: brightness(1.1);
-}
-
-.button-1:disabled {
-  cursor: auto;
-}
 
 .button-3 {
-    appearance: none;
-    background-color: #2ea44f;
-    border: 1px solid rgba(27, 31, 35, .15);
-    border-radius: 6px;
-    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
-    box-sizing: border-box;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 20px;
-    padding: 6px 16px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+	appearance: none;
+	background-color: #2ea44f;
+	border: 1px solid rgba(27, 31, 35, .15);
+	border-radius: 6px;
+	box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 20px;
+	padding: 6px 16px;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	vertical-align: middle;
+	white-space: nowrap;
+	&:focus {
+		&:not(:focus-visible) {
+			&:not(.focus-visible) {
+				box-shadow: none;
+				outline: none;
+			}
+		}
+		box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+		outline: none;
+	}
+	&:hover {
+		background-color: #2c974b;
+	}
+	&:disabled {
+		background-color: #94d3a2;
+		border-color: rgba(27, 31, 35, .1);
+		color: rgba(255, 255, 255, .8);
+		cursor: default;
+	}
+	&:active {
+		background-color: #298e46;
+		box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+	}
+}
+
+.btn-view-more {
+	// background: 0 0 !important;
+	border-radius: 4px;
+	font-weight: 500;
+	padding: 3px 35px;
+	text-decoration: none;
+	font-family: 'Muli', sans-serif;
+	border: 1px solid #959899;
+	color: #3e4547;
+	font-size: 1.2rem;
+	transition: 0.4s ease all;
+	position: relative;
+	&:hover {
+		&::after {
+      content: "Xem thêm";
+			color: #fff;
+			background-color: #80b1574f !important;
+			transform: scaleX(1.3);
+			width: 100%;
+			opacity: 0;
+		}
+		color: #fff !important;
+		background-color: #f03434 !important;
+		transform: scaleX(1.3);
+		width: 100%;
+		box-shadow: 0 5px 10px rgba(114, 100, 100, 0.3);
+	}
+	&:visited {
+		border: 1px solid #959899;
+		border-radius: 4px;
+		color: #3e4547;
+		font-size: 1.15em;
+		font-weight: 500;
+		padding: 3px 35px;
+		text-decoration: none;
+		transition: 0.4s ease all;
+		font-family: 'Muli', sans-serif;
+		position: relative;
+	}
+}
+
+@media (min-width: 992px) {
+	.btn-view-more {
+		&::after {
+			content: "Xem thêm";
+			border: 1px solid #5a5e5f00;
+			text-decoration: none;
+			top: 0;
+			left: 0;
+      font-size: 1.2rem;
+			font-weight: 500;
+			padding: 3px 32px;
+			border-radius: 4px;
+			position: absolute;
+			color: #6b6e6e18;
+			background-color: #85a86923 !important;
+			z-index: -1;
+			transition: all .4s;
+			transform: scale(1.05);
+		}
+	}
+}
+
+.btn-scroll-to-top{
+  visibility: hidden;
+  position: fixed;
+  z-index: 1050;
+  bottom: 3vh;
+  font-size: 15px;
+  color: #fff;
+  right: 5%;
+  /* background-color: rgba(0,0,0,.171); */
+  background-color: $blueDam;
+  opacity: 0.15;
+  border-radius: 20px;
+  text-align: center; 
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  i{
     vertical-align: middle;
-    white-space: nowrap;
-}
-
-.button-3:focus:not(:focus-visible):not(.focus-visible) {
-    box-shadow: none;
-    outline: none;
-}
-
-.button-3:hover {
-    background-color: #2c974b;
-}
-
-.button-3:focus {
-    box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
-    outline: none;
-}
-
-.button-3:disabled {
-    background-color: #94d3a2;
-    border-color: rgba(27, 31, 35, .1);
-    color: rgba(255, 255, 255, .8);
-    cursor: default;
-}
-
-.button-3:active {
-    background-color: #298e46;
-    box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+    line-height: 1;
+    display: inline-block;
+  }
+  &:hover{
+    transition: 0.3s;
+    color: #fff;
+    background-color: $eastBay;
+    opacity: 1;
+  }
 }

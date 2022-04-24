@@ -16,6 +16,7 @@ const Activity = new Schema(
     {
         _id: false, 
         timestamps: true,
+        versionKey: false,
     }
 );
 

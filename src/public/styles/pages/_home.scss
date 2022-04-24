@@ -66,6 +66,7 @@
             width: 60%;
 
             .swiper {
+
                 .next-slide,
                 .prev-slide {
                     visibility: hidden;
@@ -73,6 +74,12 @@
                     &::after {
                         font-size: 1.2rem;
                         font-weight: 800;
+                    }
+
+                    &:hover {
+                        background: -webkit-linear-gradient(360deg, #426afd, #fdf144);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
                     }
                 }
 
@@ -83,8 +90,9 @@
                 &:hover .next-slide,
                 &:hover .prev-slide {
                     visibility: visible;
+
                     &::after {
-                        background: -webkit-linear-gradient(360deg, #54e0a6, #fdf144);
+                        background: -webkit-linear-gradient(360deg, #25d719, #f6e81f);
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
                     }
@@ -220,6 +228,10 @@
             .admission-news__content {
                 .card {
                     margin-bottom: 1.2rem;
+
+                    a {
+                        height: 15rem;
+                    }
                 }
             }
         }
@@ -239,6 +251,10 @@
             // padding-bottom: 1.5rem;
             .card {
                 margin-bottom: 1.5rem;
+
+                a {
+                    height: 13rem;
+                }
             }
         }
     }
@@ -260,9 +276,10 @@
     }
 
     .infrastructure {
-        padding-bottom: 1.2rem;
+        padding-bottom: 1.8rem;
 
         .infrastructure__content {
+            margin-top: 0.8rem;
             position: relative;
 
             // padding-bottom: 1.5rem;
@@ -294,6 +311,11 @@
                         display: block;
                     }
                 }
+
+                // &:hover~.next-card,
+                // &:hover~.prev-card {
+                //     visibility: visible;
+                // }
             }
 
             .swiper {
@@ -336,6 +358,7 @@
             }
 
             .next-card {
+                visibility: hidden;
                 color: $eastBay;
                 position: absolute;
                 right: -2rem;
@@ -347,6 +370,7 @@
             }
 
             .prev-card {
+                visibility: hidden;
                 color: $eastBay;
                 position: absolute;
                 left: -2rem;
@@ -355,6 +379,11 @@
                     font-size: 1.2rem;
                     font-weight: 800;
                 }
+            }
+
+            &:hover .next-card,
+            &:hover .prev-card {
+                visibility: visible;
             }
         }
     }
@@ -369,8 +398,50 @@
         }
 
         .news-events__content {
-            .card {
+            .news-card {
                 margin-top: 1.2rem;
+                padding-top: 0.8rem;
+                display: flex;
+                flex-direction: row;
+                border-top: 1px solid #e5e5e5;
+
+                &:first-child {
+                    border: none;
+                }
+
+                &>a {
+                    width: 10rem;
+                    height: 6.8rem;
+
+                    img {
+                        border-radius: 0.3rem;
+                    }
+                }
+
+                .card-body {
+                    min-width: 23rem;
+                    padding: 0 1rem;
+
+                    .card-title {
+                        color: $darkText;
+                        font-size: 1.2rem;
+                    }
+
+                    .card-text {
+                        color: $darkText;
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            .view-news-list {
+                text-align: right;
+
+                .more-btn {
+                    background: $red;
+                    color: #fff;
+                    font-size: 1rem;
+                }
             }
         }
 
@@ -391,6 +462,26 @@
                         padding: 0.65rem 1.2rem;
                     }
                 }
+                .announcement-list__content {
+                    padding: 0.9rem 1rem;
+                    .notification {
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .tuition {
+        .tuition__heading {
+            position: relative;
+        }
+
+        .tuition__content {
+            .tuition-card {
+                .card-img-top {
+                    height: 11rem;
+                }
             }
         }
     }
@@ -398,6 +489,14 @@
     .activities {
         .activities__heading {
             position: relative;
+        }
+
+        .activities__content {
+            .activity-card {
+                .card-img-top {
+                    height: 12rem;
+                }
+            }
         }
     }
 

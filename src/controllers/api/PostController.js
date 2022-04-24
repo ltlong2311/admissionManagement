@@ -68,7 +68,7 @@ class PostController {
                 // (error) => console.log(error)
             )
             .catch((error) => {
-                res.json({ status: false, message: error });
+                res.json({ status: false, message: error.errors.content.message });
                 console.log('err', error);
             });
         // console.log('create');

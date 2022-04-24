@@ -173,6 +173,16 @@
                         </div>
                     </div>
                 {{/each}}
+              <div class="col text-center">
+                <div class="view-news mt-2 mb-4" >
+                    <a
+                        href='/news/details'
+                        alt=''
+                        title=''
+                        class='btn-view-more'
+                    >Xem thêm</a>
+                </div>
+              </div>
             </div>
         </div>
     </section>
@@ -251,13 +261,33 @@
             </div>
         </div>
     </section>
-    <section class=''>
-        <div class='mt-4'>
-            <div class=' heading--center'>
+    <section class='tuition'>
+        <div class='container mt-4 mb-4'>
+            <div class='tuition__heading heading--center'>
                 <h2 class='highlight-underline'>Học phí - học bổng</h2>
             </div>
-            <div class='infrastructure__content'>
-              
+            <div class='tuition__content row'>
+                {{#each tuitionList}}
+                    <div class='tuition-card col-sm-6 col-lg-3'>
+                        <a href='/news/{{this.slug}}'>
+                            <img
+                                src='{{this.image}}'
+                                class='card-img-top'
+                                alt='...'
+                            />
+                        </a>
+                        <div class='card-body'>
+                            <a href='/news/{{this.slug}}'>
+                                <h5
+                                    class='card-title'
+                                >{{this.name}}</h5>
+                            </a>
+                            {{!-- <p
+                                class='card-text'
+                            >{{this.description}}</p> --}}
+                        </div>
+                    </div>
+                {{/each}}
             </div>
         </div>
     </section>
@@ -269,9 +299,9 @@
                     <h2 class='title highlight-underline'>Tin tức - sự kiện</h2>
                 </div>
                 <div class='row news-events__content'>
-                     {{#each newsList}}
-                        <div class='col-sm-6 col-lg-4'>
-                            <div class='card'>
+                    {{#each newsList}}
+                        {{!-- <div class='col'> --}}
+                            <div class='news-card col'>
                                 <a href='/news/{{this.slug}}'>
                                     <img
                                         src='{{this.image}}'
@@ -288,16 +318,19 @@
                                     <p
                                         class='card-text'
                                     >{{this.description}}</p>
-                                    <a
-                                        href='#'
-                                        alt=''
-                                        title=''
-                                        class='btn btn-primary'
-                                    >Xem chi tiết</a>
                                 </div>
                             </div>
-                        </div>
+                        {{!-- </div> --}}
                     {{/each}}
+                    <div class="view-news-list mt-2 mb-4">
+                        <a
+                            href='/news/details'
+                            alt=''
+                            title=''
+                            class="btn more-btn"
+                        >Xem tất cả <i class="fa-solid fa-arrow-right-long"></i></a>
+                    </div>
+                    
                 </div>
             </div>
             <div class='announcement col-3'>
@@ -305,14 +338,18 @@
                     <div class='announcement-list__heading bg--lightEB'>
                         <h3 class='title'>Thông báo</h3>
                     </div>
-                    <div class='category-list__content bg--lightBlue'>
+                    <div class='announcement-list__content bg--lightBlue'>
                          {{!-- <ul class='list'>
                             <li class='list-item'>
                                 <a href='#' alt='' title='Giới thiệu'>Giới
                                     thiệu</a>
                             </li>   
                         </ul> --}}
-                           <a href='#' alt='' title=''>[Thông báo] Tuyển sinh </a>
+                        {{#each notificationList}}
+                          <div class="notification">
+                            <a href='#' alt='' title="{{this.name}}">[Thông báo] {{this.name}} </a>
+                          </div>
+                        {{/each}}
                     </div>
                 </div>
             </div>
@@ -322,6 +359,29 @@
         <div class='container mt-4'>
             <div class='activities__heading heading--center'>
                 <h2 class='title highlight-underline'>Hoạt động</h2>
+            </div>
+            <div class='activities__content row'>
+               {{#each activityList}}
+                    <div class='activity-card col-sm-6 col-lg-3'>
+                        <a href='/activity/{{this.slug}}'>
+                            <img
+                                src='{{this.image}}'
+                                class='card-img-top'
+                                alt='...'
+                            />
+                        </a>
+                        <div class='card-body'>
+                            <a href='/activity/{{this.slug}}'>
+                                <h5
+                                    class='card-title'
+                                >{{this.name}}</h5>
+                            </a>
+                            {{!-- <p
+                                class='card-text'
+                            >{{this.description}}</p> --}}
+                        </div>
+                    </div>
+                {{/each}}
             </div>
         </div>
     </section>

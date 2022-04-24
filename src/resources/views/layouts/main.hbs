@@ -21,14 +21,28 @@
             {{> header}}
             {{> nav}}
             {{{body}}}
-           {{> footer}}
+            {{> footer}}
+            <div onclick="window.scrollTo(0, 0);" class="btn-scroll-to-top" id="scrollTopBtn">
+                <i class="fas fa-arrow-up"></i>
+            </div> 
         </div>
     </body>
 </html>
 
 <script type="text/javascript">
-   window.addEventListener("scroll", function(){
-       var navbar1 = document.getElementById("mainNav");
-       navbar1.classList.toggle("sticky", window.scrollY > 0);
-   })
+    window.addEventListener("scroll", function(){
+        var navbar1 = document.getElementById("mainNav");
+        navbar1.classList.toggle("sticky", window.scrollY > 0);
+    });
+
+    var scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollTopBtn.style.visibility = "visible";
+        } else {
+            scrollTopBtn.style.visibility = "hidden";
+        }
+    }
 </script>

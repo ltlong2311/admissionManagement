@@ -15,6 +15,7 @@ const Infrastructure = new Schema(
     {
         _id: false,
         timestamps: true,
+        versionKey: false,
     }
 );
 

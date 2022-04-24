@@ -69,7 +69,7 @@ class NewsController {
                 console.log(result);
             })
             .catch((error) => {
-                res.json({ status: false, message: error });
+                res.json({ status: false, message: error.errors.content.message });
                 console.log(error);
             });
         // console.log('create');

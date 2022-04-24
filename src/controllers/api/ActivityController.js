@@ -1,5 +1,5 @@
 const Activity = require('../../models/Activity');
-// const { mongooseToObject } = require('../util/mongoose');
+const { mongooseToObject, multipleMongooseToObject } = require('../../util/mongoose');
 
 class ActivityController {
     // [GET] /api/Post
@@ -43,7 +43,7 @@ class ActivityController {
                 .catch((err) => res.json({ message: err }));
         }
     };
-    // [POST] /api/add-Post
+    // [POST] /api/add-activity
     create = async (req, res) => {
         // formData.image = `https://image.com/${req.body.image}/kma.jpg`
         console.log(req.body);
@@ -54,13 +54,14 @@ class ActivityController {
                 (result) =>
                     res.status(200).json({
                         status: true,
-                        data: result,
+                        data: mongooseToObject(result),
                         message: 'Create Activity success!',
                     }) // doesn't run
                 // (error) => console.log(error)
             )
             .catch((error) => {
                 res.json({ status: false, message: error });
+                // res.json({ status: false, message: error.message });
                 console.log('err', error);
             });
         // console.log('create');
@@ -77,7 +78,7 @@ class ActivityController {
                     console.log(result);
                 })
                 .catch((error) => {
-                    res.json({ status: false, message: error });
+                    res.json({ status: false, message: error.errors.content.message });
                     console.log(error);
                 });
         } else {

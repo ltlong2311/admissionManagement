@@ -54,7 +54,7 @@ class TuitionController {
                 (result) =>
                     res.status(200).json({
                         status: true,
-                        data: result,
+                        // data: result,
                         message: 'Create Tuition success!',
                     }) // doesn't run
                 // (error) => console.log(error)

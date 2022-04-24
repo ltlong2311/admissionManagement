@@ -54,7 +54,7 @@ class NotificationController {
                 (result) =>
                     res.status(200).json({
                         status: true,
-                        data: result,
+                        // data: result,
                         message: 'Create Notification success!',
                     }) // doesn't run
                 // (error) => console.log(error)

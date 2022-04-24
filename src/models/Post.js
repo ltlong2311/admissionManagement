@@ -17,6 +17,7 @@ const Post = new Schema(
     {
         _id: false, // de mongodb k can thiep vao truong nay
         timestamps: true,
+        versionKey: false,
     }
 );
 

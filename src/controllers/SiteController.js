@@ -4,27 +4,14 @@ const News = require('../models/News');
 const Post = require('../models/Post');
 const Infrastructure = require('../models/Infrastructure');
 const Specialized = require('../models/Specialized');
-const { multipleMongooseToOject } = require('../util/mongoose');
+const { multipleMongooseToObject } = require('../util/mongoose');
+const Activity = require('../models/Activity');
+const Tuition = require('../models/Tuition');
+const Notification = require('../models/Notification');
 
 class SiteController {
     // [GET] /
     home(req, res, next) {
-        // New.find({})
-        // .then((news) => res.render('home', {
-        //   news: news
-        // }))
-        // .catch(next);
-
-        // News.find({})
-        //     .then((newsList) => {
-        //         // news = news.map((item) => item.toObject());
-        //         // res.render('home', { news });
-        //         res.render('home', {
-        //             newsList: multipleMongooseToOject(newsList),
-        //         });
-        //     })
-        //     .catch(next);
-
         /* Solution 1: if else -> working fine */
 
         // News.find({}, function (err, news) {
@@ -36,8 +23,8 @@ class SiteController {
         //                 console.log(err);
         //             } else {
         //                 res.render('home', {
-        //                     newsList: multipleMongooseToOject(news),
-        //                     postList: multipleMongooseToOject(posts),
+        //                     newsList: multipleMongooseToObject(news),
+        //                     postList: multipleMongooseToObject(posts),
         //                 });
         //             }
         //         });
@@ -54,7 +41,7 @@ class SiteController {
                         } else {
                             callback(null, news);
                         }
-                    });
+                    }).sort({'date': -1}).limit(6); //6 latest news
                 },
                 mainPostList: function (callback) {
                     Post.find({ type: 1 }, function (err, posts) {
@@ -64,7 +51,7 @@ class SiteController {
                         } else {
                             callback(null, posts);
                         }
-                    });
+                    }).sort({'date': -1}).limit(6); 
                 },
                 admissionsPostList: function (callback) {
                     Post.find({ type: 2 }, function (err, posts) {
@@ -74,7 +61,7 @@ class SiteController {
                         } else {
                             callback(null, posts);
                         }
-                    });
+                    }).sort({'date': -1}).limit(4);;
                 },
                 infrastructureList: function (callback) {
                     Infrastructure.find({}, function (err, result) {
@@ -94,6 +81,33 @@ class SiteController {
                         }
                     });
                 },
+                notificationList: function (callback) {
+                    Notification.find({}, function (err, result) {
+                        if (err) {
+                            callback(err, null);
+                        } else {
+                            callback(null, result);
+                        }
+                    }).sort({'date': -1}).limit(10);
+                },
+                tuitionList: function (callback) {
+                    Tuition.find({}, function (err, result) {
+                        if (err) {
+                            callback(err, null);
+                        } else {
+                            callback(null, result);
+                        }
+                    }).sort({'date': -1}).limit(10);
+                },
+                activityList: function (callback) {
+                    Activity.find({}, function (err, result) {
+                        if (err) {
+                            callback(err, null);
+                        } else {
+                            callback(null, result);
+                        }
+                    }).sort({'date': -1}).limit(4);;
+                },
             },
             function (err, results) {
                 // results is equal to: { newsList: news, postList: posts }
@@ -106,18 +120,21 @@ class SiteController {
                     (item) => item.branch === 2
                 );
                 res.render('home', {
-                    newsList: multipleMongooseToOject(results.newsList),
-                    mainPostList: multipleMongooseToOject(results.mainPostList),
-                    admissionsPostList: multipleMongooseToOject(results.admissionsPostList),
-                    specializedNorthList: multipleMongooseToOject(
+                    newsList: multipleMongooseToObject(results.newsList),
+                    mainPostList: multipleMongooseToObject(results.mainPostList),
+                    admissionsPostList: multipleMongooseToObject(results.admissionsPostList),
+                    specializedNorthList: multipleMongooseToObject(
                         specializedNorthList
                     ),
-                    specializedSouthList: multipleMongooseToOject(
+                    specializedSouthList: multipleMongooseToObject(
                         specializedSouthList
                     ),
-                    infrastructureList: multipleMongooseToOject(
+                    infrastructureList: multipleMongooseToObject(
                         results.infrastructureList
                     ),
+                    tuitionList: multipleMongooseToObject(results.tuitionList),
+                    activityList: multipleMongooseToObject(results.activityList),
+                    notificationList: multipleMongooseToObject(results.notificationList),
                 });
             }
         );
@@ -145,8 +162,8 @@ class SiteController {
         //     })
         //     .then((results) => {
         //         res.render('home', {
-        //             newsList: multipleMongooseToOject(results.newsList),
-        //             postList: multipleMongooseToOject(results.postList),
+        //             newsList: multipleMongooseToObject(results.newsList),
+        //             postList: multipleMongooseToObject(results.postList),
         //         });
         //     })
         //     .catch((err) => {
@@ -179,8 +196,8 @@ class SiteController {
         //         // results is equal to: { newsList: news, postList: posts }
         //         // res.render('home', results);
         //         res.render('home', {
-        //             newsList: multipleMongooseToOject(results.newsList),
-        //             postList: multipleMongooseToOject(results.postList),
+        //             newsList: multipleMongooseToObject(results.newsList),
+        //             postList: multipleMongooseToObject(results.postList),
         //         });
         //     } catch (err) {
         //         console.log(err);

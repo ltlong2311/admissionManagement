@@ -1,5 +1,5 @@
 const News = require('../models/News');
-const { multipleMongooseToOject } = require('../util/mongoose');
+const { multipleMongooseToObject } = require('../util/mongoose');
 
 class MeController {
     // [GET] /me/stored/news
@@ -13,7 +13,7 @@ class MeController {
         // News.find({})
         //     .then((newsList) =>
         //         res.render('me/stored-news', {
-        //             newsList: multipleMongooseToOject(newsList),
+        //             newsList: multipleMongooseToObject(newsList),
         //         })
         //     )
         //     .catch(next);
@@ -23,7 +23,7 @@ class MeController {
             .then(([newsList, deletedCount]) =>
                 res.render('me/stored-news', {
                     deletedCount, 
-                    newsList: multipleMongooseToOject(newsList),
+                    newsList: multipleMongooseToObject(newsList),
                 })
             )
             .catch(next);
@@ -34,7 +34,7 @@ class MeController {
         News.findDeleted({})
             .then((newsList) =>
                 res.render('me/trash-news', {
-                    newsList: multipleMongooseToOject(newsList),
+                    newsList: multipleMongooseToObject(newsList),
                 })
             )
             .catch(next);

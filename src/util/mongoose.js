@@ -1,6 +1,6 @@
 // helper mongoose for express-handlebar
 module.exports = {
-    multipleMongooseToOject: function (mongooseArr) {
+    multipleMongooseToObject: function (mongooseArr) {
         return mongooseArr.map((mongooseItem) => mongooseItem.toObject());
     },
     mongooseToObject: function (mongooseItem) {

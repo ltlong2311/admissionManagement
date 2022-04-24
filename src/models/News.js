@@ -11,6 +11,7 @@ const News = new Schema({
   isRecommended: { type: Boolean }
 }, {
   timestamps: true,
+  versionKey: false,
 });
 
 // Add soft delete plugin
