@@ -3,7 +3,7 @@
 
 .home-page {
     .header-content {
-        margin-top: 1rem;
+        padding-top: 1rem;
 
         .home-list {
             display: flex;
@@ -182,6 +182,7 @@
                 .category-list__content {
                     display: flex;
                     width: 100%;
+                    margin-bottom: 2rem;
                     padding: 0.6rem 1.2rem;
 
                     .list {
@@ -226,6 +227,7 @@
             }
 
             .admission-news__content {
+                margin-bottom: 0.6rem;
                 .card {
                     margin-bottom: 1.2rem;
 
@@ -247,7 +249,7 @@
     .college-admissions {
         .college-admissions__content {
             position: relative;
-
+            margin-bottom: 2rem;
             // padding-bottom: 1.5rem;
             .card {
                 margin-bottom: 1.5rem;
@@ -280,6 +282,7 @@
 
         .infrastructure__content {
             margin-top: 0.8rem;
+            margin-bottom: 2rem;
             position: relative;
 
             // padding-bottom: 1.5rem;
@@ -393,11 +396,12 @@
             text-align: center;
 
             .highlight-underline {
-                margin-top: 0;
+                margin: 0;
             }
         }
 
         .news-events__content {
+            margin-bottom: 2rem;
             .news-card {
                 margin-top: 1.2rem;
                 padding-top: 0.8rem;
@@ -463,6 +467,7 @@
                     }
                 }
                 .announcement-list__content {
+                    margin-bottom: 2rem;
                     padding: 0.9rem 1rem;
                     .notification {
                         margin-bottom: 1rem;
@@ -478,6 +483,7 @@
         }
 
         .tuition__content {
+            margin-bottom: 2rem;
             .tuition-card {
                 .card-img-top {
                     height: 11rem;
@@ -492,9 +498,28 @@
         }
 
         .activities__content {
+            padding-bottom: 2rem;
             .activity-card {
+                margin-bottom: 0.5rem;
+                position: relative;
                 .card-img-top {
                     height: 12rem;
+                }
+
+                .card-body {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    padding-left: 1.2rem; 
+                    padding-right: 1.2rem;
+                    text-align: center;
+                    color: $white;
+                    background: #f5eded3d;
+                    font-weight: 500;
+                    h5 {
+                        font-size: 1.2rem;
+                    }
                 }
             }
         }
@@ -516,7 +541,7 @@
     .highlight-underline {
         line-height: 1.4;
         font-weight: 500;
-        margin: 1rem 0 2rem;
+        margin: 1rem 0 3.2rem;
         position: relative;
         display: inline-block;
         text-transform: uppercase;

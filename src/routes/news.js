@@ -12,5 +12,7 @@ router.patch('/:id/restore', newsController.restore);
 router.delete('/:id', newsController.delete);
 router.delete('/:id/force', newsController.destroy);
 router.get('/api', newsController.index);
+router.get('/all-news', newsController.index);
+
 
 module.exports = router;

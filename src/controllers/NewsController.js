@@ -89,7 +89,6 @@ class NewsController {
 
         // res.send('Create success!' + JSON.stringify(req.body));
     }
-
 }
 
 module.exports = new NewsController();

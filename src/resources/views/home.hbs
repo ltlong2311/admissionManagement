@@ -51,8 +51,8 @@
             </div>
         </div>
     </section>
-    <section class='recommended-news'>
-        <div class='container mt-4'>
+    <section class='recommended-news mt-4 mb-4'>
+        <div class='container'>
             <div class='row'>
                 <div class='category col-3'>
                     <div class='category-list bg--lightBlue'>
@@ -145,7 +145,7 @@
         </div>
     </section>
     <section class='college-admissions bg--section'>
-        <div class='container mt-4'>
+        <div class='container'>
             <div class='college-admissions__heading heading--center'>
                 <h2 class='highlight-underline'>Tuyển sinh đại học</h2>
             </div>
@@ -173,21 +173,21 @@
                         </div>
                     </div>
                 {{/each}}
-              <div class="col text-center">
-                <div class="view-news mt-2 mb-4" >
-                    <a
-                        href='/news/details'
-                        alt=''
-                        title=''
-                        class='btn-view-more'
-                    >Xem thêm</a>
+                <div class="col text-center">
+                    <div class="view-news mt-4 margin-bottom-3" >
+                        <a
+                            href='/news/details'
+                            alt=''
+                            title=''
+                            class='btn-view-more'
+                        >Xem thêm</a>
+                    </div>
                 </div>
-              </div>
             </div>
         </div>
     </section>
-    <section class='specialized-training'>
-        <div class='container mt-4'>
+    <section class='specialized-training mt-4 mb-4'>
+        <div class='container'>
             <div class='specialized-training__heading heading--center'>
                 <h2 class='highlight-underline'>Chuyên ngành đào tạo</h2>
             </div>
@@ -225,44 +225,43 @@
         </div>
     </section>
     <section class='infrastructure bg--section'>
-        <div class='mt-4'>
-            <div class='infrastructure__heading heading--center'>
-                <h2 class='highlight-underline'>Cơ sở vật chất</h2>
-            </div>
-            <div class='infrastructure__content'>
-                <div class='center-content container'>
-                    <div class="infrastructure-slider swiper mySwiper">
-                        <div class='swiper-wrapper'>
-                            {{#each infrastructureList}}
-                            {{! <div class='col-sm-6 col-lg-3'> }}
-                            <div class='swiper-slide card'>
-                                <div class='infrastructure-card text-white bg--dark'>
-                                    <div class='card-img-overlay'>
-                                        <div class="infrastructure-info">
-                                            <h5 class='card-title'>{{this.title}}</h5>
-                                            <p class='card-text'>{{this.description}}.</p>
-                                        </div>
-                                        {{!-- <p class='card-text'>Last updated 3 mins ago</p> --}}
-                                    </div>
-                                    <img class="card-img infrastructure-image" src='{{this.image}}' alt="Card image" />
-                                </div>
-                            </div>
-                            {{!-- </div> --}}
-                            {{/each}}
-                        </div>
-                    </div>
-                    <div class="swiper-button-prev prev-card"></div>
-                    <div class="swiper-button-next next-card"></div>
-                    
-                </div>
-                {{!-- <div class="swiper-button-next next-card"></div>
-                <div class="swiper-button-prev prev-card"></div> --}}
-                <div class="swiper-pagination display-none"></div>
-            </div>
+        <div class='infrastructure__heading heading--center'>
+            <h2 class='highlight-underline'>Cơ sở vật chất</h2>
         </div>
+        <div class='infrastructure__content'>
+            <div class='center-content container'>
+                <div class="infrastructure-slider swiper mySwiper">
+                    <div class='swiper-wrapper'>
+                        {{#each infrastructureList}}
+                        {{! <div class='col-sm-6 col-lg-3'> }}
+                        <div class='swiper-slide card'>
+                            <div class='infrastructure-card text-white bg--dark'>
+                                <div class='card-img-overlay'>
+                                    <div class="infrastructure-info">
+                                        <h5 class='card-title'>{{this.title}}</h5>
+                                        <p class='card-text'>{{this.description}}.</p>
+                                    </div>
+                                    {{!-- <p class='card-text'>Last updated 3 mins ago</p> --}}
+                                </div>
+                                <img class="card-img infrastructure-image" src='{{this.image}}' alt="Card image" />
+                            </div>
+                        </div>
+                        {{!-- </div> --}}
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="swiper-button-prev prev-card"></div>
+                <div class="swiper-button-next next-card"></div>
+                
+            </div>
+            {{!-- <div class="swiper-button-next next-card"></div>
+            <div class="swiper-button-prev prev-card"></div> --}}
+            <div class="swiper-pagination display-none"></div>
+        </div>
+
     </section>
-    <section class='tuition'>
-        <div class='container mt-4 mb-4'>
+    <section class='tuition mt-4 mb-4'>
+        <div class='container'>
             <div class='tuition__heading heading--center'>
                 <h2 class='highlight-underline'>Học phí - học bổng</h2>
             </div>
@@ -288,6 +287,16 @@
                         </div>
                     </div>
                 {{/each}}
+                <div class="col text-center">
+                    <div class="view-news mt-4 margin-bottom-2" >
+                        <a
+                            href='/news/details'
+                            alt=''
+                            title=''
+                            class='btn-view-more bg--white'
+                        >Xem thêm</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -322,7 +331,7 @@
                             </div>
                         {{!-- </div> --}}
                     {{/each}}
-                    <div class="view-news-list mt-2 mb-4">
+                    <div class="view-news-list mt-4">
                         <a
                             href='/news/details'
                             alt=''
@@ -355,13 +364,13 @@
             </div>
         </div>
     </section>
-    <section class='activities'>
-        <div class='container mt-4'>
+    <section class='activities bg--section mt-4'>
+        <div class='container'>
             <div class='activities__heading heading--center'>
                 <h2 class='title highlight-underline'>Hoạt động</h2>
             </div>
             <div class='activities__content row'>
-               {{#each activityList}}
+               {{#each activityPostList}}
                     <div class='activity-card col-sm-6 col-lg-3'>
                         <a href='/activity/{{this.slug}}'>
                             <img
@@ -371,17 +380,27 @@
                             />
                         </a>
                         <div class='card-body'>
-                            <a href='/activity/{{this.slug}}'>
+                            {{!-- <a href='/activity/{{this.slug}}'> --}}
                                 <h5
                                     class='card-title'
-                                >{{this.name}}</h5>
-                            </a>
+                                >{{this.title}}</h5>
+                            {{!-- </a> --}}
                             {{!-- <p
                                 class='card-text'
                             >{{this.description}}</p> --}}
                         </div>
                     </div>
                 {{/each}}
+                <div class="col text-center">
+                    <div class="view-news margin-top-3 mb-4" >
+                        <a
+                            href='/activities/details'
+                            alt=''
+                            title=''
+                            class='btn-view-more'
+                        >Xem thêm</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

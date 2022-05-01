@@ -4,20 +4,6 @@ const { multipleMongooseToObject } = require('../util/mongoose');
 class MeController {
     // [GET] /me/stored/news
     storedNews(req, res, next) {
-        // News.countDocumentsDeleted()
-        //     .then((deletedCount) => {
-        //         console.log(deletedCount);
-        //     })
-        //     .catch(() => {});
-
-        // News.find({})
-        //     .then((newsList) =>
-        //         res.render('me/stored-news', {
-        //             newsList: multipleMongooseToObject(newsList),
-        //         })
-        //     )
-        //     .catch(next);
-
         // destructuring
         Promise.all([News.find({}), News.countDocumentsDeleted()])
             .then(([newsList, deletedCount]) =>

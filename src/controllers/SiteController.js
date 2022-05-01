@@ -41,7 +41,7 @@ class SiteController {
                         } else {
                             callback(null, news);
                         }
-                    }).sort({'date': -1}).limit(6); //6 latest news
+                    }).sort({createdAt: -1}).limit(6); //6 latest news
                 },
                 mainPostList: function (callback) {
                     Post.find({ type: 1 }, function (err, posts) {
@@ -51,7 +51,7 @@ class SiteController {
                         } else {
                             callback(null, posts);
                         }
-                    }).sort({'date': -1}).limit(6); 
+                    }).sort({createdAt: -1}).limit(6); 
                 },
                 admissionsPostList: function (callback) {
                     Post.find({ type: 2 }, function (err, posts) {
@@ -61,7 +61,17 @@ class SiteController {
                         } else {
                             callback(null, posts);
                         }
-                    }).sort({'date': -1}).limit(4);;
+                    }).sort({createdAt: -1}).limit(4);;
+                },
+                activityPostList: function (callback) {
+                    Post.find({ type: 3 }, function (err, posts) {
+                        // main post
+                        if (err) {
+                            callback(err, null);
+                        } else {
+                            callback(null, posts);
+                        }
+                    }).sort({createdAt: -1}).limit(4);;
                 },
                 infrastructureList: function (callback) {
                     Infrastructure.find({}, function (err, result) {
@@ -88,7 +98,7 @@ class SiteController {
                         } else {
                             callback(null, result);
                         }
-                    }).sort({'date': -1}).limit(10);
+                    }).sort({createdAt: -1}).limit(10);
                 },
                 tuitionList: function (callback) {
                     Tuition.find({}, function (err, result) {
@@ -97,7 +107,7 @@ class SiteController {
                         } else {
                             callback(null, result);
                         }
-                    }).sort({'date': -1}).limit(10);
+                    }).sort({createdAt: -1}).limit(10);
                 },
                 activityList: function (callback) {
                     Activity.find({}, function (err, result) {
@@ -106,7 +116,7 @@ class SiteController {
                         } else {
                             callback(null, result);
                         }
-                    }).sort({'date': -1}).limit(4);;
+                    }).sort({createdAt: -1}).limit(4);;
                 },
             },
             function (err, results) {
@@ -135,6 +145,7 @@ class SiteController {
                     tuitionList: multipleMongooseToObject(results.tuitionList),
                     activityList: multipleMongooseToObject(results.activityList),
                     notificationList: multipleMongooseToObject(results.notificationList),
+                    activityPostList: multipleMongooseToObject(results.activityPostList),
                 });
             }
         );
@@ -213,6 +224,10 @@ class SiteController {
     // [GET] /contact
     contact(req, res) {
         res.render('contact');
+    }
+
+    activity(req, res) {
+        res.render('activity');
     }
 }
 

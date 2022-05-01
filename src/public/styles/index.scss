@@ -1,11 +1,9 @@
 @import 'utilities/variable', 'utilities/mixins', 'utilities/extends';
-@import 'layout/header';
-@import 'layout/footer';
-@import 'layout/navbar';
+@import 'layout/header', 'layout/footer', 'layout/navbar';
+@import 'themes/background', 'themes/space';
 @import 'pages/home';
 @import 'components/banner';
 @import 'components/button';
-@import 'themes/background';
 
 html {
     font-size: 15px;
@@ -44,5 +42,5 @@ img {
 }
 
 .display-none {
-    display: none!important;
+    display: none !important;
 }

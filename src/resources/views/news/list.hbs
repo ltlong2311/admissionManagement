@@ -1,0 +1,15 @@
+{{#each newsList}}
+    {{! <div class='col'> }}
+    <div class='news-card col'>
+        <a href='/news/{{this.slug}}'>
+            <img src='{{this.image}}' class='card-img-top' alt='...' />
+        </a>
+        <div class='card-body'>
+            <a href='/news/{{this.slug}}'>
+                <h5 class='card-title'>{{this.title}}</h5>
+            </a>
+            <p class='card-text'>{{this.description}}</p>
+        </div>
+    </div>
+    {{! </div> }}
+{{/each}}

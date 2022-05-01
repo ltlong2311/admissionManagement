@@ -3,13 +3,11 @@ const router = express.Router();
 
 const postController = require('../controllers/PostController');
 
+router.get('/list', postController.index);
 router.get('/:slug', postController.show);
-// router.get('/create', postController.create);
-// router.post('/store', postController.store);
-// router.get('/:id/edit', postController.edit);
-// router.put('/:id', postController.update);
-// router.patch('/:id/restore', postController.restore);
-// router.delete('/:id', postController.delete);
-// router.delete('/:id/force', postController.destroy);
+router.get('/admissions', postController.showAdmission);
+router.get('/admission/:slug', postController.showAdmission);
+router.get('/activities', postController.showAdmission);
+router.get('/activity/:slug', postController.showAdmission);
 
 module.exports = router;
